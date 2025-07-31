@@ -1,7 +1,7 @@
 {
   "name": "motherland-coffee",
   "version": "0.1.0",
-  "homepage": "https://DupieM.github.io/motherland-coffee",
+  "homepage": "https://DupieM.github.io/Motherland_Coffee",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.14.0",
