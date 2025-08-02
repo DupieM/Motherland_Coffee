@@ -1,0 +1,21 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  padding: 1rem 2rem;
+  border-bottom: 2px solid black; /* ← Bottom black line */
+  font-family: 'Helvetica Neue', sans-serif;
+}
+
+.logo-text {
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: black;
+}
+
+.stickers-text {
+  font-style: italic;
+  font-size: 1rem;
+  color: black;
+}
