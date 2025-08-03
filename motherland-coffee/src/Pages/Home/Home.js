@@ -78,35 +78,43 @@ const Home = () => {
       </main> {/* End of main content */}
 
       {/* Footer */}
-      <footer className="footer mt-auto py-3 bg-dark text-white"> {/* bg-dark for black background, text-white for text */}
-        <div className="container-fluid d-flex flex-column flex-md-row justify-content-between align-items-center">
-          {/* Left section: Logo and Company Name */}
-          <div className="footer-left d-flex align-items-center mb-2 mb-md-0">
-            {/* Make sure MotherlandLogo points to your actual logo image file */}
-            <img alt="Motherland Coffee Logo" className="footer-logo me-3" />
-            <span className="company-name text-uppercase">Motherland Coffee (Pty) Ltd.</span>
-          </div>
+      <footer className="footer bg-dark text-white">
+  <div className="footer-container">
+    
+    {/* Left: Logo */}
+    <div className="footer-section left">
+      <img 
+        src="/your-logo-path.png" 
+        alt="Motherland Coffee Logo" 
+        className="footer-logo" 
+      />
+    </div>
 
-          {/* Right section: Follow Us and Social Icons */}
-          <div className="footer-right text-md-end">
-            <span className="follow-us-text me-3 d-block d-md-inline">Follow Us</span>
-            <div className="social-icons d-inline-block">
-              <a href="https://facebook.com/motherlandcoffee" target="_blank" rel="noopener noreferrer" className="text-white me-2">
-                <FaFacebook size={24} />
-              </a>
-              <a href="https://instagram.com/motherlandcoffee" target="_blank" rel="noopener noreferrer" className="text-white me-2">
-                <FaInstagram size={24} />
-              </a>
-              <a href="https://twitter.com/motherlandcoffee" target="_blank" rel="noopener noreferrer" className="text-white">
-                <FaTwitter size={24} /> {/* Using FaTwitter for 'X' icon */}
-              </a>
-            </div>
-          </div>
-        </div>
-        <div className="container-fluid text-center mt-2">
-            <small className="text-muted-dark">© 2025 Motherland Coffee. All rights reserved.</small>
-        </div>
-      </footer>
+    {/* Center: Company Name */}
+    <div className="footer-section center">
+      <span className="company-name">MOTHERLAND COFEE (PTY) LTD.</span>
+    </div>
+
+    {/* Right: Socials */}
+    <div className="footer-section right">
+      <span className="follow-us-text">Follow Us</span>
+      <div className="social-icons">
+        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+          <FaFacebook size={20} />
+        </a>
+        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+          <FaInstagram size={20} />
+        </a>
+        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+          <FaTwitter size={20} />
+        </a>
+      </div>
+    </div>
+
+  </div>
+</footer>
+
+
     </div>
   );
 };
