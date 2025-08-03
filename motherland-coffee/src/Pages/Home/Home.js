@@ -9,10 +9,10 @@ const Home = () => {
   const [selectedLocation, setSelectedLocation] = useState(null);
 
   const locations = [
-    { name: "Cape Town", x: "15%", y: "75%" },     
-    { name: "Johannesburg", x: "65%", y: "28%" },   
-    { name: "Durban", x: "75%", y: "55%" },         
-    { name: "Pretoria", x: "67%", y: "22%" }        
+    { name: "Cape Town (City Centre)", x: "27%", y: "90%" },
+    { name: "Johannesburg (Bedfordview)", x: "65%", y: "28%" }, 
+    { name: "Johannesburg (Randburg)", x: "60%", y: "30%" },                    
+    { name: "Pretoria (Groenkloof)", x: "67%", y: "22%" }     
   ];
 
   const handleMarkerClick = (location) => {
@@ -45,11 +45,10 @@ const Home = () => {
               <p>Let’s celebrate language, coffee, and connection one cup at a time.</p>
             </div>
 
-            <h2 className="subtitle text-center my-4">Map of Motherland Coffee</h2>
+            <h2 className="subtitle text-center my-4">Motherland Coffee Locations</h2>
 
             {/* Map Container - Centered due to parent row and col classes */}
             <div className="mapContainer position-relative mb-5">
-              {/* The SVG map image */}
               <img src={SouthAfricaSVG} alt="Map of Motherland Coffee locations in South Africa" className="southAfricaMapImage" />
 
               {/* Markers */}
