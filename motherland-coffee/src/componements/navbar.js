@@ -13,8 +13,8 @@ const Navbar = () => {
       </div>
       
       <div className="navbar-right">
-        <Link to="/" className="stickers-link">
-          <span className="stickers-text">Stickers</span>
+        <Link to="/sticker" className="stickers-link">
+          <span className="stickers-text">Create</span>
         </Link>
       </div>
     </nav>
