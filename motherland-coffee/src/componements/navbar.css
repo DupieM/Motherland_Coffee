@@ -3,7 +3,8 @@
   justify-content: space-between;
   align-items: center;
   background-color: white;
-  padding: 1rem 2rem;
+  padding-left: 20px;
+  padding-top: 4px;
   border-bottom: 2px solid black; /* ← Bottom black line */
   font-family: 'Helvetica Neue', sans-serif;
 }
@@ -18,4 +19,8 @@
   font-style: italic;
   font-size: 1rem;
   color: black;
+}
+
+.logo-image {
+  height: 90px;
 }
