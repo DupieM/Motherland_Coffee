@@ -30,7 +30,7 @@ const Home = () => {
   return (
     // Using Bootstrap flex utilities for full page height and footer sticky
     <div>
-    <div className="container-fluid pageContainer d-flex flex-column min-vh-100">
+    <div className="container-fluid page-Container d-flex flex-column min-vh-100">
       <main className="flex-grow-1"> 
         <div className="row justify-content-center"> 
           <div className="col-lg-8 col-md-10 col-sm-12"> 
