@@ -1,0 +1,61 @@
+.footer {
+  background-color: #000;
+  color: #fff;
+  padding: 2rem 0;
+  width: 99.46vw; /* Full width of the viewport */
+  margin-left: calc(-50vw + 50%); /* Cancel any centering */
+  position: relative;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.footer-section {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+}
+
+.footer-section.center {
+  justify-content: center;
+  text-align: center;
+}
+
+.footer-section.right {
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.footer-logo {
+  height: 120px;
+  width: auto;
+}
+
+.company-name {
+  font-weight: bold;
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+
+.follow-us-text {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.social-icons a {
+  color: white;
+  margin-left: 10px;
+  transition: color 0.2s ease-in-out;
+}
+
+.social-icons a:hover {
+  color: #e60023;
+}

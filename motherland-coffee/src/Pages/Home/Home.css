@@ -1,9 +1,14 @@
 /* Base Styles */
 .pageContainer {
+  background-image: url('../../assets/bg.png'); /* adjust path if needed */
+  background-size: cover;         /* makes it fill the area */
+  background-position: center;    /* center the image */
+  background-repeat: no-repeat;   /* prevent tiling */
   padding: 2rem;
   font-family: 'Helvetica Neue', sans-serif;
-  background-color: #f5f5f5;
-  min-height: 100vh;
+  background-color: #f5f5f5;      /* fallback color */
+  min-height: 83vh;
+  margin-bottom: -60px;
 }
 
 .title {
