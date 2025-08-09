@@ -14,11 +14,6 @@ const Navbar = () => {
       </div>
       
       <div className="navbar-right">
-        <Link to="/sticker" className="stickers-link">
-          <span className="stickers-text">Create</span>
-        </Link>
-      </div>
-      <div className="navbar-right">
         <Link to="/thankyou" className="stickers-link">
           <span className="thank-you-text">Thank You</span>
         </Link>

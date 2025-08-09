@@ -2,7 +2,7 @@
   position: relative;
   padding: 2rem;
   font-family: 'Helvetica Neue', sans-serif;
-  background-color: black;
+  background-color: grey;
   min-height: 150vh;
   margin-bottom: -60px;
   z-index: 1;
@@ -20,7 +20,7 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  opacity: 0.2; /* Control transparency here */
+  opacity: 0; /* Control transparency here */
   z-index: -1;
 }
 
@@ -64,7 +64,7 @@
 
 .sticker-pattern-background {
   background-repeat: repeat;
-  background-size: 50px 50px;
+  background-size: 400px 400px;
   background-blend-mode: overlay;
   background-color: rgba(255,255,255,0.85);
 }
