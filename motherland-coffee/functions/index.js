@@ -1,32 +1,25 @@
-const { onCall } = require("firebase-functions/v2/https"); // Use v2 import
-const { setGlobalOptions } = require("firebase-functions/v2"); // For global options if needed
+const functions = require("firebase-functions");
 const nodemailer = require("nodemailer");
-const { defineString } = require("firebase-functions/v2/params"); // To properly access config variables in v2
 
-// Define the SendGrid API key as a secret parameter for Cloud Functions v2
-// This ensures it's securely accessed at runtime.
-const SENDGRID_API_KEY = defineString("SENDGRID_KEY");
-
-
-// Configure the email service using Firebase environment configuration
-// For v2 functions, we define global options, like region, if not specified in firebase.json
-setGlobalOptions({ region: "us-central1" }); // Ensure this matches your project's region
+// Access SendGrid API key from Firebase config (set with `firebase functions:config:set`)
+const SENDGRID_API_KEY = functions.config().sendgrid.key;
 
 const transporter = nodemailer.createTransport({
   service: "SendGrid",
   auth: {
     user: "apikey",
-    pass: SENDGRID_API_KEY.value(), // Access the secret value
+    pass: SENDGRID_API_KEY,
   },
 });
 
-// Define the callable function
-exports.sendStickerEmail = onCall(async (request) => { // 'request' object for v2 callable functions
-  // For callable functions, data and context are properties of the request object
-  const { email, htmlContent } = request.data;
+// v1 style HTTPS Callable function
+exports.sendStickerEmail = functions.https.onCall(async (data, context) => {
+  const { email, htmlContent } = data;
 
   if (!email || !htmlContent) {
-    throw new Error(
+    // Use HttpsError to send errors to client in v1
+    throw new functions.https.HttpsError(
+      "invalid-argument",
       "The function must be called with 'email' and 'htmlContent'."
     );
   }
@@ -44,8 +37,9 @@ exports.sendStickerEmail = onCall(async (request) => { // 'request' object for v
     return { success: true, message: "Email sent successfully!" };
   } catch (error) {
     console.error("Error sending sticker email:", error);
-    // Throwing HttpsError directly is more common in v1. For v2, throw a standard Error
-    // and let the client-side Firebase SDK handle converting it to an HttpsError.
-    throw new Error("Failed to send email.");
+    throw new functions.https.HttpsError(
+      "internal",
+      "Failed to send email."
+    );
   }
 });
