@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { httpsCallable } from "firebase/functions"; // Ensure this import is correct
+import { httpsCallable } from "firebase/functions";
 import "./Sticker.css";
-import { getPatterns } from "../../services/dbService";
-import { functions } from "../../firebase";
+import { functions, storage } from "../../firebase";
+import { getDocs, collection } from "firebase/firestore";
+import { getDownloadURL, ref } from "firebase/storage";
+import { db } from "../../firebase";
 
 function Sticker() {
   const [name, setName] = useState("");
@@ -11,19 +13,27 @@ function Sticker() {
   const [selectedPattern, setSelectedPattern] = useState("");
   const [borderColor, setBorderColor] = useState("#000");
   const [email, setEmail] = useState("");
-
   const [currentPatternIndex, setCurrentPatternIndex] = useState(0);
 
-  const colors = ["#b48a60", "#ff0000", "#00ff00", "#0000ff", "#ff9900", "#800080", "#000"]; // Added #000 (black) for completeness
+  const colors = ["#b48a60", "#ff0000", "#00ff00", "#0000ff", "#ff9900", "#800080", "#000"];
 
-  // Effect to fetch patterns from the database on component mount
+  // ✅ Original naming: getPatterns
+  async function getPatterns() {
+    const snapshot = await getDocs(collection(db, "patterns"));
+    const data = snapshot.docs.map(doc => ({
+      id: doc.id,
+      name: doc.data().name,
+      url: doc.data().url // Already stored as public URL
+    }));
+    return data;
+  }
+
   useEffect(() => {
     async function fetchPatterns() {
       try {
         const patternsFromDb = await getPatterns();
-        setPatterns(patternsFromDb);
         console.log("Fetched patterns array:", patternsFromDb);
-        // Set the initial selected pattern to the first one fetched
+        setPatterns(patternsFromDb);
         if (patternsFromDb.length > 0) {
           setSelectedPattern(patternsFromDb[0].url);
         }
@@ -32,9 +42,8 @@ function Sticker() {
       }
     }
     fetchPatterns();
-  }, []); // Empty dependency array ensures this runs only once on mount
+  }, []);
 
-  // Handles navigation to the next pattern in the carousel
   const handleNextPattern = () => {
     if (patterns.length > 0) {
       const nextIndex = (currentPatternIndex + 1) % patterns.length;
@@ -43,7 +52,6 @@ function Sticker() {
     }
   };
 
-  // Handles navigation to the previous pattern in the carousel
   const handlePrevPattern = () => {
     if (patterns.length > 0) {
       const prevIndex = (currentPatternIndex - 1 + patterns.length) % patterns.length;
@@ -52,26 +60,20 @@ function Sticker() {
     }
   };
 
-  // Handles the form submission and sends the sticker via email
-  const handleSubmit = async (e) => { // Added 'e' for the event object
-    e.preventDefault(); // Prevent default form submission to stop page reload
-
-    // Basic validation to ensure all fields are filled
+  const handleSubmit = async (e) => {
+    e.preventDefault();
     if (!email || !name || !message) {
-      // Replaced alert with a console log or custom UI for better UX
-      console.log("Please complete all fields.");
-      alert("Please complete all fields."); // Keeping alert for now as per previous usage
+      alert("Please complete all fields.");
       return;
     }
 
-    // Construct the HTML content for the sticker email
     const stickerHTML = `
       <html>
       <body>
         <div style="
           border:10px solid ${borderColor};
           padding:20px; width:200px; text-align:center;
-          background-image: ${selectedPattern ? `url(${selectedPattern})` : "none"};
+          background-image: url('${selectedPattern}');
           background-repeat: repeat;
           background-size: 80px 80px;
           background-position: center;">
@@ -83,31 +85,12 @@ function Sticker() {
     `;
 
     try {
-      // Call the Firebase Cloud Function using httpsCallable
       const sendEmailFunction = httpsCallable(functions, "sendStickerEmail");
-      const result = await sendEmailFunction({ email, htmlContent: stickerHTML });
-
-      // Check the result from the Cloud Function
-      if (result.data && result.data.success) {
-        console.log("Sticker sent successfully to email:", email);
-        alert("Sticker sent to your email!"); // Success message
-        // Optionally clear the form after successful submission
-        setName("");
-        setMessage("");
-        setEmail("");
-        setBorderColor("#000");
-        setCurrentPatternIndex(0);
-        if (patterns.length > 0) {
-          setSelectedPattern(patterns[0].url);
-        }
-      } else {
-        console.error("Error sending sticker (function returned error):", result.data);
-        alert("Failed to send email. Please try again."); // More specific error
-      }
+      await sendEmailFunction({ email, htmlContent: stickerHTML });
+      alert("Sticker sent to your email!");
     } catch (error) {
-      // Catch any network or client-side errors during the function call
-      console.error("Error calling sendStickerEmail function:", error);
-      alert("Failed to send email. Please check your internet connection or try again later.");
+      console.error("Error sending sticker:", error);
+      alert("Failed to send email.");
     }
   };
 
@@ -156,6 +139,22 @@ function Sticker() {
       </div>
 
       {console.log("Preview render, selectedPattern is:", selectedPattern)}
+
+      {/* ✅ Debug test box */}
+      {/* <div
+        style={{
+          height: "100px",
+          width: "100px",
+          border: "2px solid red",
+          backgroundImage: selectedPattern ? `url("${selectedPattern}")` : "none",
+          backgroundRepeat: "repeat",
+          backgroundSize: "40px 40px",
+          backgroundPosition: "center",
+          backgroundColor: "transparent",
+        }}
+      ></div> */}
+
+      {/* Actual Preview */}
       <div
         style={{
           border: `10px solid ${borderColor}`,
@@ -167,11 +166,13 @@ function Sticker() {
           justifyContent: "center",
           textAlign: "center",
           color: "#000",
-          backgroundImage: selectedPattern ? `url(${selectedPattern})` : "none",
+          backgroundImage: selectedPattern 
+          ? `linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), url("${selectedPattern}")` 
+          : "none",
           backgroundRepeat: "repeat",
-          backgroundSize: "80px 80px",
+          backgroundSize: "400px 400px",
           backgroundPosition: "center",
-          backgroundColor: "transparent", // Ensures background image is visible
+          backgroundColor: "transparent",
         }}
       >
         <p>{name}</p>
