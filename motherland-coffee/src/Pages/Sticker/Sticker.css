@@ -1,10 +1,12 @@
 .page-Containerone {
   position: relative;
   padding: 2rem;
-  font-family: 'Helvetica Neue', sans-serif;
-  background-color: grey;
-  min-height: 150vh;
-  margin-bottom: -60px;
+  font-family: 'Rokkitt', "Courier Bold", Courier, Georgia, Times, "Times New Roman", serif;
+  background-color: rgb(232, 232, 232);
+  min-height: 100vh; /* was 150vh */
+  display: flex; /* center horizontally & vertically */
+  justify-content: center;
+  align-items: center;
   z-index: 1;
   overflow: hidden;
 }
@@ -20,16 +22,16 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  opacity: 0; /* Control transparency here */
+  opacity: 0.08; /* Control transparency here */
   z-index: -1;
 }
 
 .title1 {
-  font-size: 30pt;
+  font-size: 37pt;
   margin-bottom: 1rem;
   text-align: center;
-  color: white;
-  font-weight: bold;
+  color: rgb(72, 51, 52);
+  font-weight: 1000;
 }
 
 .patterns img {

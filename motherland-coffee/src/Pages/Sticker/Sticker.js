@@ -15,7 +15,7 @@ function Sticker() {
   const [email, setEmail] = useState("");
   const [currentPatternIndex, setCurrentPatternIndex] = useState(0);
 
-  const colors = ["#b48a60", "#ff0000", "#00ff00", "#0000ff", "#ff9900", "#800080", "#000"];
+  const colors = ["#b48a60", "#ff0000"];
 
   // ✅ Original naming: getPatterns
   async function getPatterns() {
@@ -95,103 +95,95 @@ function Sticker() {
   };
 
   return (
-    <div className="container-fluid page-Containerone d-flex flex-column min-vh-100">
-      <h3 className="title1 text-center my-4">1. Enter Full Name</h3>
+  <div className="container-fluid page-Containerone d-flex justify-content-center align-items-center">
+    <div className="card shadow-lg p-4 w-100" style={{ maxWidth: "1200px" }}>
+      <h3 className="title1 mb-4">Let us know who's sending the love</h3>
       <input
         type="text"
+        className="form-control mb-3"
         placeholder="Full Name"
         value={name}
         onChange={(e) => setName(e.target.value)}
       />
 
-      <h3 className="title1 text-center my-4">2. Write Message</h3>
+      <h3 className="title1 mb-4">Share your words or greeting</h3>
       <textarea
+        className="form-control mb-3"
         placeholder="Your Message"
         value={message}
         onChange={(e) => setMessage(e.target.value)}
       />
 
-      <h3 className="title1 text-center my-4">3. Choose Pattern</h3>
-      <div className="carousel-container">
-        <button onClick={handlePrevPattern} className="carousel-button">Previous</button>
+      <h3 className="title1 mb-4">Choose a background you like</h3>
+      <div className="d-flex justify-content-between align-items-center mb-3">
+        <button onClick={handlePrevPattern} className="btn btn-secondary">Previous</button>
         {patterns.length > 0 ? (
           <img
             src={patterns[currentPatternIndex].url}
             alt={patterns[currentPatternIndex].name}
-            className="carousel-image"
+            style={{ maxHeight: "100px" }}
+            className="img-fluid"
           />
         ) : (
-          <p style={{ color: "white" }}>Loading patterns...</p>
+          <p>Loading patterns...</p>
         )}
-        <button onClick={handleNextPattern} className="carousel-button">Next</button>
+        <button onClick={handleNextPattern} className="btn btn-secondary">Next</button>
       </div>
 
-      <h3 className="title1 text-center my-4">4. Choose Colour</h3>
-      <div className="colors d-flex justify-content-center">
+      <h3 className="title1 mb-4">Add your favourite colour touch</h3>
+      <div className="colors d-flex justify-content-center mb-3">
         {colors.map((color, index) => (
           <div
             key={index}
             className={`color-option ${borderColor === color ? "selected" : ""}`}
-            style={{ backgroundColor: color }}
+            style={{
+              backgroundColor: color,
+              border: borderColor === color ? "3px solid black" : "1px solid #ccc"
+            }}
             onClick={() => setBorderColor(color)}
           />
         ))}
       </div>
 
-      {console.log("Preview render, selectedPattern is:", selectedPattern)}
-
-      {/* ✅ Debug test box */}
-      {/* <div
-        style={{
-          height: "100px",
-          width: "100px",
-          border: "2px solid red",
-          backgroundImage: selectedPattern ? `url("${selectedPattern}")` : "none",
-          backgroundRepeat: "repeat",
-          backgroundSize: "40px 40px",
-          backgroundPosition: "center",
-          backgroundColor: "transparent",
-        }}
-      ></div> */}
-
-      {/* Actual Preview */}
       <div
+        className="mb-4"
         style={{
           border: `10px solid ${borderColor}`,
-          minHeight: "400px",
-          width: "400px",
+          height: "300px",
           display: "flex",
-          flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
+          backgroundImage: selectedPattern
+            ? `linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)), url("${selectedPattern}")`
+            : "none",
+          backgroundSize: "cover",
           textAlign: "center",
-          color: "#000",
-          backgroundImage: selectedPattern 
-          ? `linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), url("${selectedPattern}")` 
-          : "none",
-          backgroundRepeat: "repeat",
-          backgroundSize: "400px 400px",
-          backgroundPosition: "center",
-          backgroundColor: "transparent",
+          padding: "20px"
         }}
       >
-        <p>{name}</p>
-        <p>{message}</p>
+        <div>
+          <p>{name}</p>
+          <p>{message}</p>
+        </div>
       </div>
 
-      <h3 className="title1 text-center my-4">5. Enter Email to Receive Sticker</h3>
+      <h3 className="title1 mb-4">Where we'll send your sticker</h3>
       <input
         type="email"
+        className="form-control mb-4"
         placeholder="Your Email"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
       />
 
-      <button className="submit-btn" onClick={handleSubmit}>
+      <button className="submit-btn w-100" onClick={handleSubmit}>
         Submit & Send
       </button>
     </div>
-  );
+  </div>
+);
+
+
 }
 
 export default Sticker;
