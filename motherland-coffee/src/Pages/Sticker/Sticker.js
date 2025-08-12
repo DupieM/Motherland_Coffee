@@ -76,9 +76,11 @@ function Sticker() {
         background-image: url('${selectedPattern}');
         background-repeat: repeat;
         background-size: 80px 80px;
-        background-position: center;">
-        <h3>${name}</h3>
-        <p>${message}</p>
+        background-position: center;
+        background-color: rgba(255, 255, 255, 0.11);
+        background-blend-mode: lighten;">
+        <h1 style="font-weight: bold; color: rgba(0, 0, 0, 1); background-color: rgba(255, 255, 255, 0.70)">${name}</h1>
+        <h2 style="font-weight: bold; color: rgba(0, 0, 0, 1); background-color: rgba(255, 255, 255, 0.70)">${message}</h2>
       </div>
     </body>
     </html>
@@ -110,6 +112,7 @@ function Sticker() {
       <h3 className="title1 mb-4">Let us know who's sending the love</h3>
       <input
         type="text"
+        style={{height:'30px', width:'300px', fontSize:'16pt'}}
         className="form-control mb-3"
         placeholder="Full Name"
         value={name}
@@ -119,6 +122,7 @@ function Sticker() {
       <h3 className="title1 mb-4">Share your words or greeting</h3>
       <textarea
         className="form-control mb-3"
+        style={{height:'100px', width:'400px', fontSize:'16pt'}}
         placeholder="Your Message"
         value={message}
         onChange={(e) => setMessage(e.target.value)}
@@ -131,7 +135,7 @@ function Sticker() {
           <img
             src={patterns[currentPatternIndex].url}
             alt={patterns[currentPatternIndex].name}
-            style={{ maxHeight: "100px" }}
+            style={{ height: "200px", width: '400px' }}
             className="img-fluid"
           />
         ) : (
@@ -172,14 +176,15 @@ function Sticker() {
         }}
       >
         <div>
-          <p>{name}</p>
-          <p>{message}</p>
+          <h1 className="text">{name}</h1>
+          <h2 className="text">{message}</h2>
         </div>
       </div>
 
       <h3 className="title1 mb-4">Where we'll send your sticker</h3>
       <input
         type="email"
+        style={{height:'30px', width:'300px', fontSize:'16pt'}}
         className="form-control mb-4"
         placeholder="Your Email"
         value={email}

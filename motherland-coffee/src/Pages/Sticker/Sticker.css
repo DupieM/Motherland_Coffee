@@ -53,8 +53,6 @@
   cursor: pointer;
 }
 
-
-
 .submit-btn {
   margin-top: 20px;
   background-color: #b48a60;
@@ -65,8 +63,19 @@
 }
 
 .sticker-pattern-background {
-  background-repeat: repeat;
+  background-repeat: no-repeat;
   background-size: 400px 400px;
   background-blend-mode: overlay;
   background-color: rgba(255,255,255,0.85);
+}
+
+.text {
+  font-size: 30pt;
+  font-weight: bold;
+}
+
+.btn {
+  width: 80px;
+  height: 60px;
+  font-size: 12pt;
 }
