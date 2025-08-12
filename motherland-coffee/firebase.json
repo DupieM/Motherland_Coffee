@@ -1,7 +1,7 @@
 {
   "functions": {
     "source": "functions",
-    "runtime": "nodejs16",
+    "runtime": "nodejs18",
     "platform": "gcfv1",
     "ignore": [
       "node_modules",

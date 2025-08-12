@@ -61,38 +61,48 @@ function Sticker() {
   };
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    if (!email || !name || !message) {
-      alert("Please complete all fields.");
-      return;
-    }
+  e.preventDefault();
+  if (!email || !name || !message) {
+    alert("Please complete all fields.");
+    return;
+  }
 
-    const stickerHTML = `
-      <html>
-      <body>
-        <div style="
-          border:10px solid ${borderColor};
-          padding:20px; width:200px; text-align:center;
-          background-image: url('${selectedPattern}');
-          background-repeat: repeat;
-          background-size: 80px 80px;
-          background-position: center;">
-          <h3>${name}</h3>
-          <p>${message}</p>
-        </div>
-      </body>
-      </html>
-    `;
+  const stickerHTML = `
+    <html>
+    <body>
+      <div style="
+        border:10px solid ${borderColor};
+        padding:20px; width:200px; text-align:center;
+        background-image: url('${selectedPattern}');
+        background-repeat: repeat;
+        background-size: 80px 80px;
+        background-position: center;">
+        <h3>${name}</h3>
+        <p>${message}</p>
+      </div>
+    </body>
+    </html>
+  `;
 
-    try {
-      const sendEmailFunction = httpsCallable(functions, "sendStickerEmail");
-      await sendEmailFunction({ email, htmlContent: stickerHTML });
+  try {
+    const response = await fetch("http://localhost:5000/send-email", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email, htmlContent: stickerHTML })
+    });
+
+    const data = await response.json();
+    if (data.success) {
       alert("Sticker sent to your email!");
-    } catch (error) {
-      console.error("Error sending sticker:", error);
+    } else {
       alert("Failed to send email.");
     }
-  };
+  } catch (error) {
+    console.error("Error sending sticker:", error);
+    alert("Failed to send email.");
+  }
+};
+
 
   return (
   <div className="container-fluid page-Containerone d-flex justify-content-center align-items-center">
