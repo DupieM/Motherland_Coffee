@@ -1,9 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { httpsCallable } from "firebase/functions";
 import "./Sticker.css";
-import { functions, storage } from "../../firebase";
 import { getDocs, collection } from "firebase/firestore";
-import { getDownloadURL, ref } from "firebase/storage";
 import { db } from "../../firebase";
 
 function Sticker() {
@@ -15,24 +12,21 @@ function Sticker() {
   const [email, setEmail] = useState("");
   const [currentPatternIndex, setCurrentPatternIndex] = useState(0);
 
-  const colors = ["#b48a60", "#ff0000"];
+  const colors = ["#7d6c5cff", "#795f3eff", "#201f1bff", "#9c7d51ff", "#817e40ff", "#302017ff", "#1e160eff", "#96816eff"];
 
-  // ✅ Original naming: getPatterns
   async function getPatterns() {
     const snapshot = await getDocs(collection(db, "patterns"));
-    const data = snapshot.docs.map(doc => ({
+    return snapshot.docs.map(doc => ({
       id: doc.id,
       name: doc.data().name,
-      url: doc.data().url // Already stored as public URL
+      url: doc.data().url
     }));
-    return data;
   }
 
   useEffect(() => {
     async function fetchPatterns() {
       try {
         const patternsFromDb = await getPatterns();
-        console.log("Fetched patterns array:", patternsFromDb);
         setPatterns(patternsFromDb);
         if (patternsFromDb.length > 0) {
           setSelectedPattern(patternsFromDb[0].url);
@@ -61,76 +55,96 @@ function Sticker() {
   };
 
   const handleSubmit = async (e) => {
-  e.preventDefault();
-  if (!email || !name || !message) {
-    alert("Please complete all fields.");
-    return;
-  }
+    e.preventDefault();
+    if (!email || !name || !message) {
+      alert("Please complete all fields.");
+      return;
+    }
 
-  const stickerHTML = `
-    <html>
-    <body>
-      <div style="
-        border:10px solid ${borderColor};
-        padding:20px; width:200px; text-align:center;
-        background-image: url('${selectedPattern}');
-        background-repeat: repeat;
-        background-size: 80px 80px;
-        background-position: center;
-        background-color: rgba(255, 255, 255, 0.11);
-        background-blend-mode: lighten;">
-        <h1 style="font-weight: bold; color: rgba(0, 0, 0, 1); background-color: rgba(255, 255, 255, 0.70)">${name}</h1>
-        <h2 style="font-weight: bold; color: rgba(0, 0, 0, 1); background-color: rgba(255, 255, 255, 0.70)">${message}</h2>
-      </div>
-    </body>
-    </html>
-  `;
+    const stickerHTML = `
+      <html>
+      <body>
+        <div style="
+          border:10px solid ${borderColor};
+          padding:20px; width:200px; text-align:center;
+          background-image: url('${selectedPattern}');
+          background-repeat: repeat;
+          background-size: 100px 100px;
+          background-position: center;
+          background-color: rgba(255, 255, 255, 0.11);
+          background-blend-mode: lighten;">
+          <h1 style="font-weight: bold; color: rgba(0, 0, 0, 1); background-color: rgba(255, 255, 255, 0.70)">${name}</h1>
+          <h2 style="font-weight: bold; color: rgba(0, 0, 0, 1); background-color: rgba(255, 255, 255, 0.70)">${message}</h2>
+        </div>
+      </body>
+      </html>
+    `;
 
-  try {
-    const response = await fetch("http://localhost:5000/send-email", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ email, htmlContent: stickerHTML })
-    });
-
-    const data = await response.json();
-    if (data.success) {
-      alert("Sticker sent to your email!");
-    } else {
+    try {
+      const response = await fetch("http://localhost:5000/send-email", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, htmlContent: stickerHTML })
+      });
+      const data = await response.json();
+      if (data.success) {
+        alert("Sticker sent to your email!");
+      } else {
+        alert("Failed to send email.");
+      }
+    } catch (error) {
+      console.error("Error sending sticker:", error);
       alert("Failed to send email.");
     }
-  } catch (error) {
-    console.error("Error sending sticker:", error);
-    alert("Failed to send email.");
-  }
-};
-
+  };
 
   return (
   <div className="container-fluid page-Containerone d-flex justify-content-center align-items-center">
-    <div className="card shadow-lg p-4 w-100" style={{ maxWidth: "1200px" }}>
-      <h3 className="title1 mb-4">Let us know who's sending the love</h3>
+    <div className="card shadow-lg p-4 w-100 d-flex flex-column align-items-left" style={{ maxWidth: "1200px" }}>
+
+      {/* Name Input */}
+      <h3 className="title1 mb-4 text-left">Let us know who's sending the love</h3>
+      <br/>
       <input
         type="text"
-        style={{height:'30px', width:'300px', fontSize:'16pt'}}
-        className="form-control mb-3"
-        placeholder="Full Name"
+        className="form-control mb-4 placeholder"
+        style={{
+          height: '30px',
+          width: '300px',
+          fontSize: '16pt',
+          color: 'rgb(195, 154, 85)',
+          borderColor: 'rgb(195, 154, 85)',
+          borderStyle: 'solid',
+        }}
+        placeholder="Name"
         value={name}
         onChange={(e) => setName(e.target.value)}
       />
 
-      <h3 className="title1 mb-4">Share your words or greeting</h3>
+      {/* Message Input */}
+      <h3 className="title1 mb-4 text-left">Share your words</h3>
+      <h7 className="subtitle mb-4 text-left">Write a message of what coffee means to you in your home language</h7>
+      <br/>
+      <br/>
       <textarea
-        className="form-control mb-3"
-        style={{height:'100px', width:'400px', fontSize:'16pt'}}
+        className="form-control mb-3 placeholder mx-auto"
+        style={{
+          height: '100px',
+          width: '500px',
+          fontSize: '16pt',
+          color: 'rgb(195, 154, 85)',
+          borderColor: 'rgb(195, 154, 85)',
+        }}
         placeholder="Your Message"
         value={message}
         onChange={(e) => setMessage(e.target.value)}
       />
 
-      <h3 className="title1 mb-4">Choose a background you like</h3>
-      <div className="d-flex justify-content-between align-items-center mb-3">
-        <button onClick={handlePrevPattern} className="btn btn-secondary">Previous</button>
+      {/* Carousel */}
+      <h3 className="title1 mb-4 text-center">Choose a background you like</h3>
+      <br/>
+      <div className="d-flex justify-content-center align-items-center mb-3">
+        <button onClick={handlePrevPattern} className="btn btn-secondary me-3">Previous</button>
         {patterns.length > 0 ? (
           <img
             src={patterns[currentPatternIndex].url}
@@ -138,13 +152,13 @@ function Sticker() {
             style={{ height: "200px", width: '400px' }}
             className="img-fluid"
           />
-        ) : (
-          <p>Loading patterns...</p>
-        )}
-        <button onClick={handleNextPattern} className="btn btn-secondary">Next</button>
+        ) : <p>Loading patterns...</p>}
+        <button onClick={handleNextPattern} className="btn btn-secondary ms-3">Next</button>
       </div>
 
-      <h3 className="title1 mb-4">Add your favourite colour touch</h3>
+      {/* Colors */}
+      <h3 className="title1 mb-4 text-center">Add your favourite colour touch</h3>
+      <br/>
       <div className="colors d-flex justify-content-center mb-3">
         {colors.map((color, index) => (
           <div
@@ -159,18 +173,23 @@ function Sticker() {
         ))}
       </div>
 
+      <br/>
+      <br/>
+
+      {/* Sticker Preview */}
       <div
-        className="mb-4"
+        className="mb-4 mx-auto"
         style={{
           border: `10px solid ${borderColor}`,
           height: "300px",
+          width: "400px",
           display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
+          alignItems: "right",
+          justifyContent: "right",
           backgroundImage: selectedPattern
             ? `linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)), url("${selectedPattern}")`
             : "none",
-          backgroundSize: "cover",
+          backgroundSize: "",
           textAlign: "center",
           padding: "20px"
         }}
@@ -181,23 +200,31 @@ function Sticker() {
         </div>
       </div>
 
-      <h3 className="title1 mb-4">Where we'll send your sticker</h3>
+      {/* Email Input */}
+      <h3 className="title1 mb-4 text-center">Where we'll send your sticker</h3>
       <input
         type="email"
-        style={{height:'30px', width:'300px', fontSize:'16pt'}}
-        className="form-control mb-4"
+        className="form-control mb-4 placeholder mx-auto"
+        style={{
+          height: '30px',
+          width: '300px',
+          fontSize: '16pt',
+          color: 'rgb(195, 154, 85)',
+          borderColor: 'rgb(195, 154, 85)',
+          borderStyle: 'solid'
+        }}
         placeholder="Your Email"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
       />
 
-      <button className="submit-btn w-100" onClick={handleSubmit}>
-        Submit & Send
+      {/* Submit */}
+      <button className="submit-btn w-50 mx-auto" onClick={handleSubmit}>
+        Submit
       </button>
     </div>
   </div>
 );
-
 
 }
 

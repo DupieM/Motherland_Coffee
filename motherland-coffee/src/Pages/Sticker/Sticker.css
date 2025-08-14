@@ -2,16 +2,17 @@
   position: relative;
   padding: 2rem;
   font-family: 'Rokkitt', "Courier Bold", Courier, Georgia, Times, "Times New Roman", serif;
-  background-color: rgb(232, 232, 232);
-  min-height: 100vh; /* was 150vh */
-  display: flex; /* center horizontally & vertically */
+  background-color: rgb(255, 255, 255);
+  min-height: 100vh;
+  display: flex;
   justify-content: center;
   align-items: center;
   z-index: 1;
   overflow: hidden;
+  /* background-color: aqua; */
 }
 
-.page-Containerone::before  {
+.page-Containerone::before {
   content: '';
   position: absolute;
   top: 0;
@@ -22,51 +23,49 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  opacity: 0.08; /* Control transparency here */
+  opacity: 0;
   z-index: -1;
 }
 
 .title1 {
   font-size: 37pt;
-  margin-bottom: 1rem;
-  text-align: center;
+  margin-bottom: 10px;
+  text-align: Left;
   color: rgb(72, 51, 52);
   font-weight: 1000;
 }
 
-.patterns img {
-  width: 60px;
-  height: 60px;
-  margin: 5px;
-  cursor: pointer;
-  border: 2px solid transparent;
-}
-.patterns img.selected {
-  border: 2px solid yellow;
+.subtitle {
+  font-size: 22pt;
+  color: rgb(72, 51, 52);
+  font-weight: 600;
 }
 
 .colors .color-option {
   width: 40px;
   height: 40px;
-  margin: 5px;
-  border: none;
+  margin: 0 8px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
   cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.colors .color-option:hover {
+  transform: scale(1.2);
 }
 
 .submit-btn {
-  margin-top: 20px;
+  margin-top: 10px;
+  margin-left: 20px;
   background-color: #b48a60;
-  padding: 10px 20px;
+  padding: 7px 15px;
   border: none;
   color: white;
   cursor: pointer;
-}
-
-.sticker-pattern-background {
-  background-repeat: no-repeat;
-  background-size: 400px 400px;
-  background-blend-mode: overlay;
-  background-color: rgba(255,255,255,0.85);
+  font-size: 17pt;
 }
 
 .text {
@@ -74,8 +73,6 @@
   font-weight: bold;
 }
 
-.btn {
-  width: 80px;
-  height: 60px;
-  font-size: 12pt;
+.placeholder::placeholder {
+  color: rgb(195, 154, 85);
 }
