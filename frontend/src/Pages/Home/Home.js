@@ -10,7 +10,7 @@ import { useTranslation } from 'react-i18next';
 
 const Home = () => {
 
-   const { t, i18n } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   const navigate = useNavigate();
   const [selectedLocation, setSelectedLocation] = useState(null);
@@ -53,7 +53,7 @@ const Home = () => {
               <p>Let’s celebrate language, coffee, and connection one cup at a time.</p>
             </div>
 
-            <h2 className="subtitle text-center my-4">Motherland Coffee Locations</h2>
+            <h2 className="subtitlet text-center my-4">Where to find your next coffee</h2>
 
             {/* Map Container - Centered due to parent row and col classes */}
             <div className="mapContainer position-relative mb-5">

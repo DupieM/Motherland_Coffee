@@ -69,7 +69,7 @@ function Sticker() {
           border:10px solid ${borderColor};
           padding:20px; width:200px; text-align:center;
           background-image: url('${selectedPattern}');
-          background-repeat: repeat;
+          background-repeat: no-repeat;
           background-size: 100px 100px;
           background-position: center;
           background-color: rgba(255, 255, 255, 0.11);
@@ -101,7 +101,7 @@ function Sticker() {
 
   return (
   <div className="container-fluid page-Containerone d-flex justify-content-center align-items-center">
-    <div className="card shadow-lg p-4 w-100 d-flex flex-column align-items-left" style={{ maxWidth: "1200px" }}>
+    <div className="card shadow-lg p-4 w-100 d-flex flex-column align-items-left" style={{ maxWidth: "940px" }}>
 
       {/* Name Input */}
       <h3 className="title1 mb-4 text-left">Let us know who's sending the love</h3>
@@ -110,9 +110,9 @@ function Sticker() {
         type="text"
         className="form-control mb-4 placeholder"
         style={{
-          height: '30px',
+          height: '20px',
           width: '300px',
-          fontSize: '16pt',
+          fontSize: '13pt',
           color: 'rgb(195, 154, 85)',
           borderColor: 'rgb(195, 154, 85)',
           borderStyle: 'solid',
@@ -132,7 +132,7 @@ function Sticker() {
         style={{
           height: '100px',
           width: '500px',
-          fontSize: '16pt',
+          fontSize: '13pt',
           color: 'rgb(195, 154, 85)',
           borderColor: 'rgb(195, 154, 85)',
         }}
@@ -150,7 +150,7 @@ function Sticker() {
           <img
             src={patterns[currentPatternIndex].url}
             alt={patterns[currentPatternIndex].name}
-            style={{ height: "200px", width: '400px' }}
+            style={{ height: "200px", width: '300px' }}
             className="img-fluid"
           />
         ) : <p>Loading patterns...</p>}
@@ -159,7 +159,6 @@ function Sticker() {
 
       {/* Colors */}
       <h3 className="title1 mb-4 text-center">Add your favourite colour touch</h3>
-      <br/>
       <div className="colors d-flex justify-content-center mb-3">
         {colors.map((color, index) => (
           <div
@@ -181,8 +180,8 @@ function Sticker() {
       <div
         className="mb-4 mx-auto"
         style={{
-          border: `10px solid ${borderColor}`,
-          height: "300px",
+          border: `8px solid ${borderColor}`,
+          height: "240px",
           width: "400px",
           display: "flex",
           alignItems: "right",
@@ -190,7 +189,8 @@ function Sticker() {
           backgroundImage: selectedPattern
             ? `linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)), url("${selectedPattern}")`
             : "none",
-          backgroundSize: "",
+          backgroundSize: "440px 280px",
+          backgroundRepeat: 'no-repeat',
           textAlign: "center",
           padding: "20px"
         }}
@@ -207,9 +207,9 @@ function Sticker() {
         type="email"
         className="form-control mb-4 placeholder mx-auto"
         style={{
-          height: '30px',
+          height: '20px',
           width: '300px',
-          fontSize: '16pt',
+          fontSize: '13pt',
           color: 'rgb(195, 154, 85)',
           borderColor: 'rgb(195, 154, 85)',
           borderStyle: 'solid'
@@ -224,11 +224,11 @@ function Sticker() {
         Submit
       </button>
 
-<Footer />
+      <br/>
+      <br/>
+
+      <Footer />
     </div>
-
-    
-
   </div>
 );
 

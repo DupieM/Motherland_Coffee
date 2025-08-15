@@ -6,7 +6,6 @@ import logo from '../assets/navbar_logo.png'
 import { useTranslation } from 'react-i18next';
 
 const Navbar = () => {
-
  const { i18n } = useTranslation();
 
   const changeLanguage = (lng) => {
@@ -24,11 +23,12 @@ const Navbar = () => {
       <select
         onChange={(e) => changeLanguage(e.target.value)}
         defaultValue={i18n.language}
+        className="dropdown"
       >
         <option value="en">English</option>
         <option value="af">Afrikaans</option>
         <option value="zu">Zulu</option>
-        <option value="xh">Xhosa</option>
+        <option value="sh">Seshoto</option>
       </select>
       
       {/* <div className="navbar-right">
