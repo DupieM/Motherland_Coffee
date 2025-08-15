@@ -4,7 +4,12 @@ import { getDocs, collection } from "firebase/firestore";
 import { db } from "../../firebase";
 import Footer from "../../componements/footer";
 
+import { useTranslation } from 'react-i18next';
+
 function Sticker() {
+
+  const { t, i18n } = useTranslation();
+
   const [name, setName] = useState("");
   const [message, setMessage] = useState("");
   const [patterns, setPatterns] = useState([]);
@@ -104,7 +109,7 @@ function Sticker() {
     <div className="card shadow-lg p-4 w-100 d-flex flex-column align-items-left" style={{ maxWidth: "940px" }}>
 
       {/* Name Input */}
-      <h3 className="title1 mb-4 text-left">Let us know who's sending the love</h3>
+      <h3 className="title1 mb-4 text-left">{t("sticker.headingone")}</h3>
       <br/>
       <input
         type="text"
@@ -117,14 +122,14 @@ function Sticker() {
           borderColor: 'rgb(195, 154, 85)',
           borderStyle: 'solid',
         }}
-        placeholder="Name"
+        placeholder={t("sticker.placeholderone")}
         value={name}
         onChange={(e) => setName(e.target.value)}
       />
 
       {/* Message Input */}
-      <h3 className="title1 mb-4 text-left">Share your words</h3>
-      <h7 className="subtitle mb-4 text-left">Write a message of what coffee means to you in your home language</h7>
+      <h3 className="title1 mb-4 text-left">{t("sticker.headingtwo")}</h3>
+      <h7 className="subtitle mb-4 text-left">{t("sticker.subheading")}</h7>
       <br/>
       <br/>
       <textarea
@@ -136,16 +141,16 @@ function Sticker() {
           color: 'rgb(195, 154, 85)',
           borderColor: 'rgb(195, 154, 85)',
         }}
-        placeholder="Your Message"
+        placeholder={t("sticker.placeholdertwo")}
         value={message}
         onChange={(e) => setMessage(e.target.value)}
       />
 
       {/* Carousel */}
-      <h3 className="title1 mb-4 text-center">Choose a background you like</h3>
+      <h3 className="title1 mb-4 text-center">{t("sticker.headingthree")}</h3>
       <br/>
       <div className="d-flex justify-content-center align-items-center mb-3">
-        <button onClick={handlePrevPattern} className="btn btn-secondary me-3">Previous</button>
+        <button onClick={handlePrevPattern} className="btn btn-secondary me-3">{t("sticker.buttontexttwo")}</button>
         {patterns.length > 0 ? (
           <img
             src={patterns[currentPatternIndex].url}
@@ -154,11 +159,11 @@ function Sticker() {
             className="img-fluid"
           />
         ) : <p>Loading patterns...</p>}
-        <button onClick={handleNextPattern} className="btn btn-secondary ms-3">Next</button>
+        <button onClick={handleNextPattern} className="btn btn-secondary ms-3">{t("sticker.buttontextthree")}</button>
       </div>
 
       {/* Colors */}
-      <h3 className="title1 mb-4 text-center">Add your favourite colour touch</h3>
+      <h3 className="title1 mb-4 text-center">{t("sticker.headingfour")}</h3>
       <div className="colors d-flex justify-content-center mb-3">
         {colors.map((color, index) => (
           <div
@@ -202,7 +207,7 @@ function Sticker() {
       </div>
 
       {/* Email Input */}
-      <h3 className="title1 mb-4 text-center">Where we'll send your sticker</h3>
+      <h3 className="title1 mb-4 text-center">{t("sticker.headingfive")}</h3>
       <input
         type="email"
         className="form-control mb-4 placeholder mx-auto"
@@ -214,14 +219,14 @@ function Sticker() {
           borderColor: 'rgb(195, 154, 85)',
           borderStyle: 'solid'
         }}
-        placeholder="Your Email"
+        placeholder={t("sticker.placeholderthree")}
         value={email}
         onChange={(e) => setEmail(e.target.value)}
       />
 
       {/* Submit */}
       <button className="submit-btn w-50 mx-auto" onClick={handleSubmit}>
-        Submit
+        {t("sticker.buttontextfour")}
       </button>
 
       <br/>

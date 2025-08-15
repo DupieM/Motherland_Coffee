@@ -4,7 +4,12 @@ import { FaFacebook, FaInstagram, FaTwitter } from 'react-icons/fa';
 import logo from '../assets/footer_logo.png'; 
 import './footer.css'; 
 
+import { useTranslation } from 'react-i18next';
+
 const Footer = () => {
+
+  const { t, i18n } = useTranslation();
+
   return (
     <footer className="footer bg-dark text-white">
       <div className="footer-container px-4">
@@ -24,7 +29,7 @@ const Footer = () => {
 
         {/* Right: Socials */}
         <div className="footer-section right">
-          <span className="follow-us-text">Follow Us</span>
+          <span className="follow-us-text">{t('footer')}</span>
           <div className="social-icons">
             <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"><FaFacebook size={20} /></a>
             <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"><FaInstagram size={20} /></a>
