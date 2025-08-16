@@ -10,27 +10,24 @@
   overflow: hidden;
 }
 
-.page-Container::before {
-  content: '';
+.background-video {
   position: absolute;
   top: 0;
-  left: 0;
-  width: 100%;
+  margin-left: -280px;
+  width: 130%;
   height: 100%;
-  background-image: url('../../assets/bg.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  opacity: 0.8; /* Control transparency here */
+  object-fit: fill;
   z-index: -1;
 }
+
 
 .title {
   font-size: 30pt;
   margin-bottom: 1rem;
   text-align: center;
-  color: black;
-  font-weight: bold;
+  color: rgb(195, 154, 85);
+  font-weight: bolder;
+  text-shadow: 4px 2px 4px rgba(0, 0, 0, 0.8)
 }
 
 .subtitlet {
@@ -38,7 +35,8 @@
   margin-top: 40px;
   margin-bottom: -30px;
   text-align: center;
-  color: black;
+  color: rgb(195, 154, 85);
+  text-shadow: 4px 2px 4px rgba(0, 0, 0, 0.8)
 }
 
 /* Info Box */
@@ -58,17 +56,17 @@
   position: relative;
   margin: 3rem auto;
   width: 100%;
-  max-width: 870px;
+  max-width: 800px;
   height: 500px;
   border: 2px solid #ccc;
   border-radius: 12px;
-  background-color: #eee;
+  background-color: #e7d7c3;
   overflow: hidden;
 }
 
 /* Placeholder inside map */
 .southAfricaMapImage {
-  width: 110%;
+  width: 120%;
   height: auto;
   display: block;
 }
@@ -92,7 +90,7 @@
 /* Popup Box */
 .popup {
   position: absolute;
-  bottom: 20px;
+  bottom: 130px;
   left: 50%;
   transform: translateX(-50%);
   background-color: #fff;

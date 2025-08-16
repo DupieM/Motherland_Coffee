@@ -12,8 +12,16 @@ function ThankYou() {
 
   return (
     <div>
-    <div className="container-fluid pageContainer d-flex flex-column min-vh-100">
-      <h1 className="title text-center my-4">{t("thankyou.text")}</h1>
+    <div className="container-fluid page-Containertwo d-flex flex-column min-vh-100">
+      {/* Video Background */}
+      <video autoPlay loop muted className="background-videotwo">
+        <source src={require('../../assets/thank_you.mp4')} type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+
+
+      <h1 className="title1 text-center my-4">{t("thankyou.text")}</h1>
+
     </div>
 
     <Footer />

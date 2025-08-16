@@ -16,10 +16,10 @@ const Home = () => {
   const [selectedLocation, setSelectedLocation] = useState(null);
 
   const locations = [
-    { name: "Cape Town (City Centre)", x: "26%", y: "87%" },
-    { name: "Johannesburg (Bedfordview)", x: "59%", y: "36%" }, 
-    { name: "Johannesburg (Randburg)", x: "58%", y: "33%" },                    
-    { name: "Pretoria (Groenkloof)", x: "59%", y: "30%" }     
+    { name: "Cape Town (City Centre)", x: "29%", y: "87%" },
+    { name: "Johannesburg (Bedfordview)", x: "63%", y: "36%" }, 
+    { name: "Johannesburg (Randburg)", x: "62%", y: "33%" },                    
+    { name: "Pretoria (Groenkloof)", x: "64%", y: "32%" }     
   ];
 
   const handleMarkerClick = (location) => {
@@ -28,14 +28,24 @@ const Home = () => {
 
   const handleContinue = () => {
     if (selectedLocation) {
-      navigate(`/sticker/${selectedLocation.name}`);
+      navigate(`/transition/${selectedLocation.name}`);
     }
   };
+
 
   return (
     // Using Bootstrap flex utilities for full page height and footer sticky
     <div>
     <div className="container-fluid page-Container d-flex flex-column min-vh-100">
+
+      {/* Video Background */}
+      <video autoPlay loop muted className="background-video">
+        <source src={require('../../assets/home.mp4')} type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+
+      {/* Main content */}
+
       <main className="flex-grow-1"> 
         <div className="row justify-content-center"> 
           <div className="col-lg-8 col-md-10 col-sm-12"> 

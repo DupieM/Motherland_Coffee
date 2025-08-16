@@ -27,8 +27,8 @@ const Navbar = () => {
       >
         <option value="en">English</option>
         <option value="af">Afrikaans</option>
-        <option value="zu">Zulu</option>
-        <option value="sh">Seshoto</option>
+        <option value="zu">isiZulu</option>
+        <option value="xh">isiXhosa</option>
       </select>
       
       {/* <div className="navbar-right">

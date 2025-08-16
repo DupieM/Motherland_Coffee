@@ -3,12 +3,18 @@ import "./Sticker.css";
 import { getDocs, collection } from "firebase/firestore";
 import { db } from "../../firebase";
 import Footer from "../../componements/footer";
+import { useNavigate } from "react-router-dom";
 
 import { useTranslation } from 'react-i18next';
+import TransitionToThankYou from "../Transition/TransitionThankYou";
 
 function Sticker() {
 
   const { t, i18n } = useTranslation();
+
+  const BACKEND_URL = "https://motherland-coffee.onrender.com";
+
+  const [showTransition, setShowTransition] = useState(false);
 
   const [name, setName] = useState("");
   const [message, setMessage] = useState("");
@@ -71,30 +77,35 @@ function Sticker() {
       <html>
       <body>
         <div style="
-          border:10px solid ${borderColor};
-          padding:20px; width:200px; text-align:center;
+          border:8px solid ${borderColor};
+          padding-right:20px;
+          padding-left:170px;
+          width:240px;
+          height:200px;
+          text-align:center;
           background-image: url('${selectedPattern}');
           background-repeat: no-repeat;
-          background-size: 100px 100px;
+          background-size: 440px 280px;
           background-position: center;
           background-color: rgba(255, 255, 255, 0.11);
           background-blend-mode: lighten;">
           <h1 style="font-weight: bold; color: rgba(0, 0, 0, 1); background-color: rgba(255, 255, 255, 0.70)">${name}</h1>
           <h2 style="font-weight: bold; color: rgba(0, 0, 0, 1); background-color: rgba(255, 255, 255, 0.70)">${message}</h2>
         </div>
+        <img src=${require('../../assets/vouchers/English_Reciever.jpg')} alt="Voucher" style="width:200px;"/>
       </body>
       </html>
     `;
 
     try {
-      const response = await fetch("http://localhost:5000/send-email", {
+      const response = await fetch(`${BACKEND_URL}/send-email`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, htmlContent: stickerHTML })
       });
       const data = await response.json();
       if (data.success) {
-        alert("Sticker sent to your email!");
+        setShowTransition(true);
       } else {
         alert("Failed to send email.");
       }
@@ -106,10 +117,14 @@ function Sticker() {
 
   return (
   <div className="container-fluid page-Containerone d-flex justify-content-center align-items-center">
+
+   {showTransition && <TransitionToThankYou/>}
+
+
     <div className="card shadow-lg p-4 w-100 d-flex flex-column align-items-left" style={{ maxWidth: "940px" }}>
 
       {/* Name Input */}
-      <h3 className="title1 mb-4 text-left">{t("sticker.headingone")}</h3>
+      <h3 className="title3 mb-4 text-left">{t("sticker.headingone")}</h3>
       <br/>
       <input
         type="text"
@@ -128,10 +143,8 @@ function Sticker() {
       />
 
       {/* Message Input */}
-      <h3 className="title1 mb-4 text-left">{t("sticker.headingtwo")}</h3>
-      <h7 className="subtitle mb-4 text-left">{t("sticker.subheading")}</h7>
-      <br/>
-      <br/>
+      <h3 className="title3 mb-4 text-left">{t("sticker.headingtwo")}</h3>
+      <h4 className="subtitle mb-4 text-left">{t("sticker.subheading")}</h4>
       <textarea
         className="form-control mb-3 placeholder mx-auto"
         style={{
@@ -147,23 +160,23 @@ function Sticker() {
       />
 
       {/* Carousel */}
-      <h3 className="title1 mb-4 text-center">{t("sticker.headingthree")}</h3>
+      <h3 className="title3 mb-4 text-center">{t("sticker.headingthree")}</h3>
       <br/>
       <div className="d-flex justify-content-center align-items-center mb-3">
-        <button onClick={handlePrevPattern} className="btn btn-secondary me-3">{t("sticker.buttontexttwo")}</button>
+        <button onClick={handlePrevPattern} className="btnone btn-secondary me-3">{t("sticker.buttontexttwo")}</button>
         {patterns.length > 0 ? (
           <img
             src={patterns[currentPatternIndex].url}
             alt={patterns[currentPatternIndex].name}
-            style={{ height: "200px", width: '300px' }}
+            style={{ height: "200px", width: '300px', marginBottom: '-95px' }}
             className="img-fluid"
           />
         ) : <p>Loading patterns...</p>}
-        <button onClick={handleNextPattern} className="btn btn-secondary ms-3">{t("sticker.buttontextthree")}</button>
+        <button onClick={handleNextPattern} className="btntwo btn-secondary ms-3">{t("sticker.buttontextthree")}</button>
       </div>
 
       {/* Colors */}
-      <h3 className="title1 mb-4 text-center">{t("sticker.headingfour")}</h3>
+      <h3 className="title2 mb-4 text-center">{t("sticker.headingfour")}</h3>
       <div className="colors d-flex justify-content-center mb-3">
         {colors.map((color, index) => (
           <div
@@ -207,7 +220,7 @@ function Sticker() {
       </div>
 
       {/* Email Input */}
-      <h3 className="title1 mb-4 text-center">{t("sticker.headingfive")}</h3>
+      <h3 className="title3 mb-4 text-center">{t("sticker.headingfive")}</h3>
       <input
         type="email"
         className="form-control mb-4 placeholder mx-auto"

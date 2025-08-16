@@ -1,12 +1,28 @@
-.pageContainer {
-  background-image: url('../../assets/bg.png'); /* adjust path if needed */
-  background-size: cover;         /* makes it fill the area */
-  background-position: center;    /* center the image */
-  background-repeat: no-repeat;   /* prevent tiling */
+.page-Containertwo {
+  position: relative;
   padding: 2rem;
   font-family: 'Helvetica Neue', sans-serif;
-  background-color: #f5f5f5;      /* fallback color */
-  min-height: 83vh;
+  background-color: #f5f5f5;
+  min-height: 100vh;
   margin-bottom: -60px;
+  z-index: 1;
+  overflow: hidden;
 }
 
+.background-videotwo {
+  position: absolute;
+  top: -220px;
+  margin-left: -280px;
+  width: 130%;
+  height: 160%;
+  object-fit: fill;
+  z-index: -1;
+}
+
+.title1 {
+  font-size: 33pt;
+  margin-bottom: 10px;
+  text-align: Left;
+  color: rgb(195, 154, 85);
+  font-weight: 1000;
+}

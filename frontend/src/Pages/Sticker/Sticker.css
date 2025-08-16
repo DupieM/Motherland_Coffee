@@ -14,12 +14,21 @@
   /* background-color: aqua; */
 }
 
-.title1 {
+.title3 {
   font-size: 33pt;
   margin-bottom: 10px;
   text-align: Left;
   color: rgb(72, 51, 52);
   font-weight: 1000;
+}
+
+.title2 {
+  font-size: 33pt;
+  margin-bottom: 10px;
+  text-align: Left;
+  color: rgb(72, 51, 52);
+  font-weight: 1000;
+  margin-top: 110px;
 }
 
 .subtitle {
@@ -64,3 +73,35 @@
   color: rgb(195, 154, 85);
 }
 
+.btnone {
+  background-color: rgb(195, 154, 85);
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+  margin-right: 10px;
+}
+
+.btnone:hover {
+  background-color: #724F50;
+}
+
+.btntwo {
+  background-color: rgb(195, 154, 85);
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+  margin-top: 0.75rem;
+  margin-left: 10px;
+}
+
+.btntwo:hover {
+  background-color: #724F50;
+}

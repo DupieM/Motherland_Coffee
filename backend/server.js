@@ -6,7 +6,9 @@ import sgMail from "@sendgrid/mail";
 dotenv.config();
 const app = express();
 
-app.use(cors()); // Allow frontend to call backend
+app.use(cors({
+  origin: ["http://localhost:3000", "https://dupiem.github.io/Motherland_Coffee/"]
+})); // Allow frontend to call backend
 app.use(express.json());
 
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
@@ -35,7 +37,6 @@ app.post("/send-email", async (req, res) => {
     res.status(500).json({ success: false, message: "Failed to send email", error: error.response?.body || error.toString() });
   }
 });
-
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Backend running on http://localhost:${PORT}`));
