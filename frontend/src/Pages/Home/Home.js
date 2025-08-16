@@ -16,10 +16,10 @@ const Home = () => {
   const [selectedLocation, setSelectedLocation] = useState(null);
 
   const locations = [
-    { name: "Cape Town (City Centre)", x: "27%", y: "90%" },
-    { name: "Johannesburg (Bedfordview)", x: "65%", y: "28%" }, 
-    { name: "Johannesburg (Randburg)", x: "60%", y: "30%" },                    
-    { name: "Pretoria (Groenkloof)", x: "67%", y: "22%" }     
+    { name: "Cape Town (City Centre)", x: "26%", y: "87%" },
+    { name: "Johannesburg (Bedfordview)", x: "59%", y: "36%" }, 
+    { name: "Johannesburg (Randburg)", x: "58%", y: "33%" },                    
+    { name: "Pretoria (Groenkloof)", x: "59%", y: "30%" }     
   ];
 
   const handleMarkerClick = (location) => {
@@ -63,7 +63,7 @@ const Home = () => {
               {locations.map((loc, index) => (
                 <div
                   key={index}
-                  className="marker"
+                  className={`marker ${selectedLocation === loc.name ? "active" : ""}`}
                   style={{ left: loc.x, top: loc.y }}
                   onClick={() => handleMarkerClick(loc)}
                   title={loc.name} // Adds a tooltip on hover

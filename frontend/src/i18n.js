@@ -26,21 +26,21 @@ i18n
           buttontextone: "Continue",
           footer: "Follow Us",
           sticker: {
-            headingone: "",
-            placeholderone: "",
-            headingtwo: "",
-            subheading: "",
-            placeholdertwo: "",
-            headingthree: "",
-            buttontexttwo: "",
-            buttontextthree: "",
-            headingfour: "",
-            headingfive: "",
-            placeholderthree: "",
-            buttontextfour: ""
+            headingone: "Let us know who's sending the love",
+            placeholderone: "Name",
+            headingtwo: "Share your words or greeting",
+            subheading: "Write a message of what coffee means to you in your home language",
+            placeholdertwo: "Your Message",
+            headingthree: "Choose a background you like",
+            buttontexttwo: "Previous",
+            buttontextthree: "Next",
+            headingfour: "Add your favourite colour touch",
+            headingfive: "Where we'll send your sticker",
+            placeholderthree: "Email",
+            buttontextfour: "Send"
           },
           thankyou: {
-            text: ""
+            text: "Thank you for participating"
           }
         }
       },
@@ -72,7 +72,7 @@ i18n
             buttontextthree: "Volgende",
             headingfour: "Kies jou gunsteling kleur",
             headingfive: "Sê vir ons na wie om die plakker te stuur",
-            placeholderthree: "Jou Email",
+            placeholderthree: "Email",
             buttontextfour: "Stuur"
           },
           thankyou: {

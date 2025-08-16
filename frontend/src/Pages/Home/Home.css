@@ -75,14 +75,18 @@
 
 .marker {
   position: absolute;
-  width: 20px;
-  height: 20px;
-  background-color: #8B0000;
+  width: 15px;
+  height: 15px;
+  background-color: rgb(72, 51, 52);
   border-radius: 50%;
   cursor: pointer;
   transform: translate(-50%, -50%);
-  border: 2px solid white;
+  border: 2px solid rgb(72, 51, 52);
   z-index: 5;
+}
+
+.marker.active {
+  border: 2px solid rgb(195, 154, 85);
 }
 
 /* Popup Box */
@@ -100,8 +104,8 @@
 }
 
 /* Buttons */
-.button {
-  background-color: #8B0000;
+.btn {
+  background-color: rgb(195, 154, 85);
   color: white;
   padding: 0.6rem 1.2rem;
   border: none;
@@ -112,8 +116,8 @@
   margin-top: 0.75rem;
 }
 
-.button:hover {
-  background-color: #a30000;
+.btn:hover {
+  background-color: #724F50;
 }
 
 /* Footer Styling */
