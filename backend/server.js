@@ -6,9 +6,7 @@ import sgMail from "@sendgrid/mail";
 dotenv.config();
 const app = express();
 
-app.use(cors({
-  origin: ["http://localhost:3000", "https://dupiem.github.io/Motherland_Coffee/"]
-})); // Allow frontend to call backend
+app.use(cors());
 app.use(express.json());
 
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
