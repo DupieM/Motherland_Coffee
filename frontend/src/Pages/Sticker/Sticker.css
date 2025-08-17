@@ -65,7 +65,7 @@
 }
 
 .text {
-  font-size: 30pt;
+  font-size: 22pt;
   font-weight: bold;
 }
 
@@ -99,7 +99,7 @@
   font-size: 1rem;
   transition: background-color 0.3s ease;
   margin-top: 0.75rem;
-  margin-left: 10px;
+  margin-left: 3px;
 }
 
 .btntwo:hover {

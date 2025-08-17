@@ -44,23 +44,36 @@ function ThankYou() {
     });
   };
 
+  const [videoLoaded, setVideoLoaded] = React.useState(false);
+
   return (
     <div>
       <div className="container-fluid page-Containertwo d-flex flex-column min-vh-100">
         {/* Video Background */}
-        <video autoPlay loop muted className="background-videotwo">
+        <video
+          autoPlay
+          loop
+          muted
+          preload="auto"
+          className={`background-videotwo ${videoLoaded ? "fade-in" : ""}`}
+          onLoadedData={() => setVideoLoaded(true)}
+        >
           <source src={require('../../assets/thank_you.mp4')} type="video/mp4" />
-          Your browser does not support the video tag.
         </video>
 
-        <h1 className="title1 text-center my-4">{t("thankyou.text")}</h1>
-          <p className="subtitle1 text-center">
-            {t("thankyou.note1")}<br/>
+        <div className="container text-center mt-auto mb-auto">
+          <h1 className="title1">{t("thankyou.text")}</h1>
+          <p className="subtitle1">
+            {t("thankyou.note1")}<br />
             {t("thankyou.note2")}
           </p>
 
-        
-        <button onClick={handleDownload} className=" btn1 download-btn">Download Vouchers</button>
+          <br/>
+
+          <button onClick={handleDownload} className="btn1 download-btn">
+            Download Vouchers
+          </button>
+        </div>
       </div>
       <Footer />
     </div>

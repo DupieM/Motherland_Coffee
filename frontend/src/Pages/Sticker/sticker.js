@@ -91,8 +91,8 @@ function Sticker() {
           background-position: center;
           background-color: rgba(255, 255, 255, 0.11);
           background-blend-mode: lighten;">
-          <h1 style="font-weight: bold; color: rgba(0, 0, 0, 1); background-color: rgba(255, 255, 255, 0.70)">${name}</h1>
-          <h2 style="font-weight: bold; color: rgba(0, 0, 0, 1); background-color: rgba(255, 255, 255, 0.70)">${message}</h2>
+          <h1 style="font-weight: bold; color: rgba(0, 0, 0, 1); background-color: rgba(255, 255, 255, 0.03)">${name}</h1>
+          <h2 style="font-weight: bold; color: rgba(0, 0, 0, 1); background-color: rgba(255, 255, 255, 0.03)">${message}</h2>
         </div>
       </body>
       </html>
