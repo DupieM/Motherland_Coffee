@@ -54,13 +54,13 @@ const Home = () => {
 
             {/* Info Box - Centered due to parent row and col classes */}
             <div className="infoBox p-4 mb-4 text-center">
-              <p>{t('descriptionlineone')}</p>
-              <p>{t('descriptionlinetwo')}</p>
-              <p><strong>{t('descriptionlinethree')}</strong></p>
-              <p>{t('descriptionlinefour')}</p>
-              <p><strong>{t('descriptionlinefive')}</strong></p>
-              <p>{t('descriptionlinesix')}</p>
-              <p>{t('descriptionlineseven')}</p>
+              <p className="infoBox2">{t('descriptionlineone')}</p>
+              <p className="infoBox2">{t('descriptionlinetwo')}</p>
+              <p className="infoBox3"><strong>{t('descriptionlinethree')}</strong></p>
+              <p className="infoBox2">{t('descriptionlinefour')}</p>
+              <p className="infoBox3"><strong>{t('descriptionlinefive')}</strong></p>
+              <p className="infoBox2">{t('descriptionlinesix')}</p>
+              <p className="infoBox2">{t('descriptionlineseven')}</p>
             </div>
 
             <h2 className="subtitlet text-center my-4">{t('subheading')}</h2>

@@ -7,7 +7,7 @@
   padding-right: 80px;
   padding-top: 4px;
   border-bottom: 2px solid black; /* ← Bottom black line */
-  font-family: 'Helvetica Neue', sans-serif;
+  font-family: 'Rokkitt', "Courier Bold", Courier, Georgia, Times, "Times New Roman", serif;
 }
 
 .logo-text {
@@ -31,7 +31,9 @@
   color: white;
   height: 30px;
   font-size: 12pt;
-  width: 100px;
+  width: 120px;
   border-radius: 5px;
   padding-left: 2px;
+  font-family: 'Rokkitt', "Courier Bold", Courier, Georgia, Times, "Times New Roman", serif;
+  font-weight: 600;
 }

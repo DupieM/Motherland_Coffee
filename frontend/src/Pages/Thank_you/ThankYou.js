@@ -54,9 +54,13 @@ function ThankYou() {
         </video>
 
         <h1 className="title1 text-center my-4">{t("thankyou.text")}</h1>
-        <p className="subtitle text-center">Click the button below to download your vouchers!</p>
-        <p>* Note two voucher are dowloaded one for you and one for person you send sticker</p>
-        <button onClick={handleDownload} className="download-btn">Download Vouchers</button>
+          <p className="subtitle1 text-center">
+            {t("thankyou.note1")}<br/>
+            {t("thankyou.note2")}
+          </p>
+
+        
+        <button onClick={handleDownload} className=" btn1 download-btn">Download Vouchers</button>
       </div>
       <Footer />
     </div>

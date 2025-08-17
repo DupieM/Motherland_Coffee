@@ -40,7 +40,9 @@ i18n
             buttontextfour: "Send"
           },
           thankyou: {
-            text: "Thank you for participating"
+            text: "Thank you for participating",
+            note1: "Two vouchers are avaible for download - one for you",
+            note2: "and one for the person receiving the sticker"
           }
         }
       },
@@ -76,7 +78,9 @@ i18n
             buttontextfour: "Stuur"
           },
           thankyou: {
-            text: "Dankie dat jy deel geneem het."
+            text: "Dankie dat jy deelgeneem het",
+            note1: "Twee afslagbewyse is beskikbaar vir aflaai - een vir jou",
+            note2: "en een vir die persoon wat die plakker ontvang"
           }
         }
       },
@@ -112,7 +116,9 @@ i18n
             buttontextfour: "thumela"
           },
           thankyou: {
-            text: "Siyabonga ngokubamba iqhaza"
+            text: "Siyabonga ngokubamba iqhaza",
+            note1: "Amavawusha amabili ayatholakala ukuze alandwe - eyodwa eyakho",
+            note2: "kanye nesomuntu othola isitikha"
           }
         }
       },
@@ -148,7 +154,9 @@ i18n
             buttontextfour: "Thumela"
           },
           thankyou: {
-            text: "Enkosi ngokuthatha inxaxheba"
+            text: "Enkosi ngokuthatha inxaxheba",
+            note1: "Iivawutsha ezimbini ziyafumaneka ukuze zikhutshelwe - enye yeyakho",
+            note2: "kunye nesinye sesomntu ofumana isincamathelisi"
           }
         }
       }

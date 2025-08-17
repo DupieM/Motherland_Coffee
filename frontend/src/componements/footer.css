@@ -5,6 +5,7 @@
   width: 99.46vw; /* Full width of the viewport */
   margin-left: calc(-50vw + 50%); /* Cancel any centering */
   position: relative;
+  font-family: 'Rokkitt', "Courier Bold", Courier, Georgia, Times, "Times New Roman", serif;
 }
 
 .footer-container {
