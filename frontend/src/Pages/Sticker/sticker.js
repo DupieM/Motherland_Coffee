@@ -66,6 +66,8 @@ function Sticker() {
     }
   };
 
+  
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!email || !name || !message) {
@@ -92,7 +94,6 @@ function Sticker() {
           <h1 style="font-weight: bold; color: rgba(0, 0, 0, 1); background-color: rgba(255, 255, 255, 0.70)">${name}</h1>
           <h2 style="font-weight: bold; color: rgba(0, 0, 0, 1); background-color: rgba(255, 255, 255, 0.70)">${message}</h2>
         </div>
-        <img src=${require('../../assets/vouchers/English_Reciever.jpg')} alt="Voucher" style="width:200px;"/>
       </body>
       </html>
     `;
@@ -101,7 +102,7 @@ function Sticker() {
       const response = await fetch(`${BACKEND_URL}/send-email`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, htmlContent: stickerHTML })
+        body: JSON.stringify({ email, htmlContent: stickerHTML})
       });
       const data = await response.json();
       if (data.success) {
