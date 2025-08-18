@@ -122,30 +122,10 @@
   background-color: #724F50;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 480px) {
   .page-Containerone {
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
-  }
-
-  .title3,
-  .title2 {
-    font-size: 28pt; /* Reduced font size for tablets and mobile */
-  }
-
-  .subtitle {
-    font-size: 16pt; /* Reduced font size for subtitles */
-  }
-
-  .title2 {
-    margin-top: 50px; /* Reduced top margin on smaller screens */
-  }
-}
-
-@media (max-width: 600px) {
-  .page-Containerone {
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
   }
 
   .title3,
