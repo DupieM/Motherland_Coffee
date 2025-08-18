@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/Motherland_Coffee/static/css/main.c8deaf8b.css",
-    "main.js": "/Motherland_Coffee/static/js/main.eab1ae13.js",
+    "main.css": "/Motherland_Coffee/static/css/main.4c58f728.css",
+    "main.js": "/Motherland_Coffee/static/js/main.8d015d3a.js",
     "static/media/thank_you.mp4": "/Motherland_Coffee/static/media/thank_you.67d4963e4ad30aa32b1f.mp4",
-    "static/media/home.mp4": "/Motherland_Coffee/static/media/home.5100931239c26790c50a.mp4",
     "static/media/Transition.mp4": "/Motherland_Coffee/static/media/Transition.5e60f3a59b7529aa7ef5.mp4",
+    "static/media/home2.mp4": "/Motherland_Coffee/static/media/home2.9de9d7ba09d7e711a1fc.mp4",
     "static/media/Zulu_Reciever.jpg": "/Motherland_Coffee/static/media/Zulu_Reciever.2cb2277fd48648fe64c7.jpg",
     "static/media/Afrikaans_Reciever.jpg": "/Motherland_Coffee/static/media/Afrikaans_Reciever.cee8b1fbf6dc5f0a4cf8.jpg",
     "static/media/Xhosa_Reciever.jpg": "/Motherland_Coffee/static/media/Xhosa_Reciever.2346a348dd5abb5c1810.jpg",
@@ -17,11 +17,11 @@
     "static/media/footer_logo.png": "/Motherland_Coffee/static/media/footer_logo.946792db7a2b63cf0f44.png",
     "static/media/navbar_logo.png": "/Motherland_Coffee/static/media/navbar_logo.d998140a2ff6bd973657.png",
     "index.html": "/Motherland_Coffee/index.html",
-    "main.c8deaf8b.css.map": "/Motherland_Coffee/static/css/main.c8deaf8b.css.map",
-    "main.eab1ae13.js.map": "/Motherland_Coffee/static/js/main.eab1ae13.js.map"
+    "main.4c58f728.css.map": "/Motherland_Coffee/static/css/main.4c58f728.css.map",
+    "main.8d015d3a.js.map": "/Motherland_Coffee/static/js/main.8d015d3a.js.map"
   },
   "entrypoints": [
-    "static/css/main.c8deaf8b.css",
-    "static/js/main.eab1ae13.js"
+    "static/css/main.4c58f728.css",
+    "static/js/main.8d015d3a.js"
   ]
 }
