@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Motherland_Coffee/static/css/main.4c58f728.css",
-    "main.js": "/Motherland_Coffee/static/js/main.8d015d3a.js",
+    "main.css": "/Motherland_Coffee/static/css/main.04cb9a0f.css",
+    "main.js": "/Motherland_Coffee/static/js/main.3fad17fe.js",
     "static/media/thank_you.mp4": "/Motherland_Coffee/static/media/thank_you.67d4963e4ad30aa32b1f.mp4",
     "static/media/Transition.mp4": "/Motherland_Coffee/static/media/Transition.5e60f3a59b7529aa7ef5.mp4",
     "static/media/home2.mp4": "/Motherland_Coffee/static/media/home2.9de9d7ba09d7e711a1fc.mp4",
@@ -13,15 +13,15 @@
     "static/media/Afrikaans_Sender.jpg": "/Motherland_Coffee/static/media/Afrikaans_Sender.2281941e76faf572805f.jpg",
     "static/media/Xhosa_Sender.jpg": "/Motherland_Coffee/static/media/Xhosa_Sender.bec797303ce1f5692bb6.jpg",
     "static/media/English_Sender.jpg": "/Motherland_Coffee/static/media/English_Sender.8cfe2d98753ff238c569.jpg",
-    "static/media/south_africa.svg": "/Motherland_Coffee/static/media/south_africa.32a97bcd7701a719a7546a6658240b6b.svg",
+    "static/media/south_africa.svg": "/Motherland_Coffee/static/media/south_africa.095771d9c0b150e583e91ed3083d25da.svg",
     "static/media/footer_logo.png": "/Motherland_Coffee/static/media/footer_logo.946792db7a2b63cf0f44.png",
     "static/media/navbar_logo.png": "/Motherland_Coffee/static/media/navbar_logo.d998140a2ff6bd973657.png",
     "index.html": "/Motherland_Coffee/index.html",
-    "main.4c58f728.css.map": "/Motherland_Coffee/static/css/main.4c58f728.css.map",
-    "main.8d015d3a.js.map": "/Motherland_Coffee/static/js/main.8d015d3a.js.map"
+    "main.04cb9a0f.css.map": "/Motherland_Coffee/static/css/main.04cb9a0f.css.map",
+    "main.3fad17fe.js.map": "/Motherland_Coffee/static/js/main.3fad17fe.js.map"
   },
   "entrypoints": [
-    "static/css/main.4c58f728.css",
-    "static/js/main.8d015d3a.js"
+    "static/css/main.04cb9a0f.css",
+    "static/js/main.3fad17fe.js"
   ]
 }
