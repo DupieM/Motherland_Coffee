@@ -142,7 +142,12 @@
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
+  .page-Containerone {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+
   .title3,
   .title2 {
     font-size: 22pt; /* Further reduced font size for mobile phones */
