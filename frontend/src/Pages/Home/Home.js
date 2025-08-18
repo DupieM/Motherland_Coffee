@@ -40,7 +40,7 @@ const Home = () => {
 
       {/* Video Background */}
       <video autoPlay loop muted className="background-video">
-        <source src={require('../../assets/home.mp4')} type="video/mp4" />
+        <source src={require('../../assets/home2.mp4')} type="video/mp4" />
         Your browser does not support the video tag.
       </video>
 

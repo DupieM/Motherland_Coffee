@@ -216,7 +216,7 @@ function Sticker() {
       >
         <div>
           <h1 className="text">{name}</h1>
-          <h2 className="text">{message}</h2>
+          <h2 className="texttwo">{message}</h2>
         </div>
       </div>
 

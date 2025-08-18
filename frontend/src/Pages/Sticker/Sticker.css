@@ -1,40 +1,48 @@
 .page-Containerone {
   position: relative;
+  /* Use padding for spacing, but don't force centering with flex */
   padding-top: 2rem;
-  padding-left: 2rem;
-  padding-right: 2rem;
+  padding-bottom: 2rem;
+  padding-left: 1rem; /* Use a smaller, more responsive horizontal padding */
+  padding-right: 1rem;
   font-family: 'Rokkitt', "Courier Bold", Courier, Georgia, Times, "Times New Roman", serif;
   background-color: rgb(255, 255, 255);
   min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  /* Remove flex centering to allow for standard content flow */
+  display: block; 
   z-index: 1;
   overflow: hidden;
-  /* background-color: aqua; */
+}
+
+.content-wrapper {
+  max-width: 800px; /* Adjust this value as needed */
+  margin: 0 auto;
 }
 
 .title3 {
-  font-size: 33pt;
-  margin-bottom: 10px;
-  text-align: Left;
+  font-size: 38pt; /* Increased font size */
+  margin-bottom: 30px;
+  text-align: left; /* Keep left-aligned */
   color: rgb(72, 51, 52);
   font-weight: 1000;
+  line-height: 1.1; /* Adjust line height for the two-line heading */
 }
 
 .title2 {
-  font-size: 33pt;
+  font-size: 38pt; /* Increased font size to match title3 */
   margin-bottom: 10px;
-  text-align: Left;
+  text-align: left; /* Keep left-aligned */
   color: rgb(72, 51, 52);
   font-weight: 1000;
   margin-top: 110px;
+  line-height: 1.1;
 }
 
 .subtitle {
   font-size: 18pt;
   color: rgb(72, 51, 52);
-  font-weight: 600;
+  font-weight: 400; /* Decreased font weight to match the image */
+  line-height: 1.3;
 }
 
 .colors .color-option {
@@ -69,6 +77,14 @@
   font-weight: bold;
 }
 
+.texttwo {
+  font-size: 19pt;
+  font-weight: bold;
+  padding-left: 100px;
+  padding-right: -20px;
+}
+
+
 .placeholder::placeholder {
   color: rgb(195, 154, 85);
 }
@@ -92,7 +108,7 @@
 .btntwo {
   background-color: rgb(195, 154, 85);
   color: white;
-  padding: 0.6rem 1.2rem;
+  padding: 0.6rem 0.6rem;
   border: none;
   border-radius: 6px;
   cursor: pointer;
@@ -104,4 +120,39 @@
 
 .btntwo:hover {
   background-color: #724F50;
+}
+
+@media (max-width: 768px) {
+  .page-Containerone {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+
+  .title3,
+  .title2 {
+    font-size: 28pt; /* Reduced font size for tablets and mobile */
+  }
+
+  .subtitle {
+    font-size: 16pt; /* Reduced font size for subtitles */
+  }
+
+  .title2 {
+    margin-top: 50px; /* Reduced top margin on smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .title3,
+  .title2 {
+    font-size: 22pt; /* Further reduced font size for mobile phones */
+  }
+  
+  .subtitle {
+    font-size: 14pt; /* Further reduced font size for subtitles on mobile */
+  }
+
+  .title2 {
+    margin-top: 30px; /* Further reduced top margin for better spacing */
+  }
 }
