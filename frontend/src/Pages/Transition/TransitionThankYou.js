@@ -18,7 +18,7 @@ const TransitionToThankYou = () => {
         // Wait for fade-out duration before navigating
         setTimeout(() => {
           navigate("/thankyou");
-        }, 1000); // match this to your CSS fade duration
+        }, 200); // match this to your CSS fade duration
       };
     }
   }, [navigate]);

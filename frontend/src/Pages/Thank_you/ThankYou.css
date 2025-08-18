@@ -67,3 +67,17 @@
 .btn1:hover {
   background-color: #724F50;
 }
+
+@media (max-width: 480px) {
+
+  .title1 {
+    font-size: 3rem;
+    color: #e8c9a5;
+  }
+
+  .subtitle1 {
+    color: #e8c9a5;
+    font-weight: 900;
+  }
+
+}

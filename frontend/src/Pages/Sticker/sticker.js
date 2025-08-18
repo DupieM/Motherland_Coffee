@@ -147,14 +147,7 @@ function Sticker() {
       <h3 className="title3 mb-4 text-left">{t("sticker.headingtwo")}</h3>
       <h4 className="subtitle mb-4 text-left">{t("sticker.subheading")}</h4>
       <textarea
-        className="form-control mb-3 placeholder mx-auto"
-        style={{
-          height: '100px',
-          width: '500px',
-          fontSize: '13pt',
-          color: 'rgb(195, 154, 85)',
-          borderColor: 'rgb(195, 154, 85)',
-        }}
+        className="form-control mb-3 placeholder message mx-auto"
         placeholder={t("sticker.placeholdertwo")}
         value={message}
         onChange={(e) => setMessage(e.target.value)}
@@ -197,21 +190,15 @@ function Sticker() {
 
       {/* Sticker Preview */}
       <div
-        className="mb-4 mx-auto"
+        className="sticker-preview mb-4 mx-auto"
         style={{
           border: `8px solid ${borderColor}`,
-          height: "240px",
-          width: "400px",
-          display: "flex",
-          alignItems: "right",
-          justifyContent: "right",
           backgroundImage: selectedPattern
             ? `linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)), url("${selectedPattern}")`
             : "none",
-          backgroundSize: "440px 280px",
+          backgroundSize: "cover", // Use 'cover' to ensure pattern fills the area
           backgroundRepeat: 'no-repeat',
-          textAlign: "center",
-          padding: "20px"
+          backgroundPosition: 'center',
         }}
       >
         <div>
@@ -246,8 +233,9 @@ function Sticker() {
       <br/>
       <br/>
 
-      <Footer />
+      
     </div>
+    <Footer />
   </div>
 );
 

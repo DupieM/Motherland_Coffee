@@ -193,49 +193,55 @@ color: #e60023;
 
 /* Responsive tweaks */
 @media (max-width: 768px) {
-.page-Container {
-padding: 1rem;
-}
+  .page-Container {
+    padding: 1rem;
+  }
 
-.infoBox {
-padding: 1.5rem;
-}
+  .infoBox {
+    padding: 1.5rem;
+  }
 
-.mapContainer {
- height: 240px;
-}
+  .mapContainer {
+    height: 240px;
+  }
 
-.southAfricaMapImage {
-  width: 130%;
-  object-fit:fill;
-  margin-left: -15px;
-  margin-top: 5px;
-}
+  .southAfricaMapImage {
+    width: 130%;
+    object-fit:fill;
+    margin-left: -15px;
+    margin-top: 5px;
+  }
 
-.marker {
-  height: 7px;
-  width: 7px;
-}
+  .marker {
+    height: 7px;
+    width: 7px;
+  }
 
-.popup {
-  width: 35%;
-  height: 46%;
-}
+  .popup {
+    width: 35%;
+    height: 46%;
+  }
 
-.title {
-font-size: 2rem;
-}
+  .btn {
+    font-size: 0.8rem;
+    font-weight: 900;
+    padding: 0.5rem 0.5rem;
+  }
 
-.subtitle {
-font-size: 1.25rem;
-}
+  .title {
+    font-size: 2rem;
+  }
 
-.footer-container {
-flex-direction: column;
-align-items: flex-start;
-}
+  .subtitle {
+    font-size: 1.25rem;
+  }
 
-.footer-section.right {
-justify-content: center;
-}
+  .footer-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .footer-section.right {
+    justify-content: center;
+  }
 }
