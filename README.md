@@ -1,3 +1,38 @@
+<br />
+
+![GitHub repo size](https://img.shields.io/github/repo-size/DupieM/Motherland_Coffee)
+![GitHub watchers](https://img.shields.io/github/watchers/DupieM/Motherland_Coffee)
+![GitHub language count](https://img.shields.io/github/languages/count/DupieM/Motherland_Coffee)
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/DupieM/duplessismarine_221326_carbontrack)
+
+<!-- HEADER SECTION -->
+<h5 align="center" style="padding:0;margin:0;">Mariné du Plessis</h5>
+<h5 align="center" style="padding:0;margin:0;">221326</h5>
+<h6 align="center">Creative Production 410 (Interactive Development)</h6>
+</br>
+<p align="center">
+
+  <a href="https://github.com/username/projectname">
+    <img src="readme_images/logo.png" alt="Logo" width="130" height="130">
+  </a>
+  
+  <h3 align="center">Motherland Coffee (Commercial)</h3>
+
+<p align="center">
+    Interactive platform where users share what coffee means to them. <br>
+   <br />
+    <a href="https://github.com/DupieM/DuPlessisMarine_221326_The_Thinking_Cabinet/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/DupieM/DuPlessisMarine_221326_The_Thinking_Cabinet/issues">Request Feature</a>
+</p>
+
+
+
+
+
+
+
+
 # Getting Started with Create React App
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
