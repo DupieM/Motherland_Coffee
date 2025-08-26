@@ -26,7 +26,39 @@
     <a href="https://github.com/DupieM/DuPlessisMarine_221326_The_Thinking_Cabinet/issues">Request Feature</a>
 </p>
 
+<!-- TABLE OF CONTENTS -->
+## Table of Contents
 
+* [About the Project](#about-the-project)
+  * [Project Description](#project-description)
+  * [Built With](#built-with)
+* [Getting Started](#getting-started)
+  * [Prerequisites](#prerequisites)
+  * [How to install](#how-to-install)
+* [Features and Functionality](#features-and-functionality)
+* [Concept Process](#concept-process)
+   * [Ideation](#ideation)
+   * [Wireframes](#wireframes)
+   * [User-flow](#user-flow)
+   * [ERD](#erd-diagram)
+* [Development Process](#development-process)
+   * [Implementation Process](#implementation-process)
+        * [Highlights](#highlights)
+        * [Challenges](#challenges)
+   * [Reviews and Testing](#peer-reviews)
+        * [Reviews](#feedback-from-reviews)
+        * [Unit Tests](#unit-tests)
+        * [UAT Tests](#uat-tests)
+   * [Future Implementation](#peer-reviews)
+* [Final Outcome](#final-outcome)
+    * [Mockups](#mockups)
+    * [Video Demonstration](#video-demonstration)
+    * [Promotional Video](#promotional-video)
+* [Roadmap](#roadmap)
+* [Contributing](#contributing)
+* [License](#license)
+* [Contact](#contact)
+* [Acknowledgements](#acknowledgements)
 
 
 
