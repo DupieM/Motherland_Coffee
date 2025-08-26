@@ -60,6 +60,25 @@
 * [Contact](#contact)
 * [Acknowledgements](#acknowledgements)
 
+<!--PROJECT DESCRIPTION-->
+## About the Project
+<!-- header image of project -->
+<img src="readme_images/header_image.png" alt="header image" width="580px">
+
+### Project Description
+
+??????
+
+### Built With
+
+* <a href="https://firebase.google.com/">![Static Badge](https://img.shields.io/badge/firebase-url?style=for-the-badge&logo=firebase&logoColor=black&color=%23FFBF00)</a>
+* <a href="https://reactnative.dev/">![Static Badge](https://img.shields.io/badge/react%20native-url?style=for-the-badge&logo=react&color=black)</a>
+* <a href="https://github.com/"> ![Static Badge](https://img.shields.io/badge/Github-url?style=for-the-badge&logo=github&color=purple)</a>
+* <a href="https://code.visualstudio.com/"> ![Static Badge](https://img.shields.io/badge/visual%20studio-url?style=for-the-badge&logo=visual%20studio&logoColor=blue&color=black&link=https%3A%2F%2Fcode.visualstudio.com%2F)</a>
+* <a href="https://render.com/"> ![Static Badge](https://img.shields.io/badge/render-url?style=for-the-badge&logo=Render&logoColor=black&labelColor=white&color=white)</a>
+* <a href="https://sendgrid.com/en-us"> ![Static Badge](https://img.shields.io/badge/Sendgrid-url?style=for-the-badge&logo=Sendgrid&logoColor=blue&labelColor=white&color=white)</a>
+
+
 
 
 
