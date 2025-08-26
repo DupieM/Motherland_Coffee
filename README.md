@@ -78,78 +78,236 @@
 * <a href="https://render.com/"> ![Static Badge](https://img.shields.io/badge/render-url?style=for-the-badge&logo=Render&logoColor=black&labelColor=white&color=white)</a>
 * <a href="https://sendgrid.com/en-us"> ![Static Badge](https://img.shields.io/badge/Sendgrid-url?style=for-the-badge&logo=Sendgrid&logoColor=blue&labelColor=white&color=white)</a>
 
+<!-- GETTING STARTED -->
+<!-- Make sure to add appropriate information about what prerequesite technologies the user would need and also the steps to install your project on their own mashines -->
+## Getting Started
+
+The following instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
+
+### Prerequisites
+
+For development, you require to create an account on [Firebase](https://firebase.google.com/).
+
+For sending emails you need to create an account on [Sendgrid]().
+
+For making sure sendgrid does not stop create a n account on [Render]() to keep sendgrid running.
+
+## How to install
+
+### Installation
+Clone the project repository as follow:
+
+1. Go to Github Desktop and then click on clone new repository
+
+2. Enter `https://github.com/DupieM/Motherland_Coffee.git` into the URL field and press the `Clone` button.
+
+To start the Frontend React app do the following steps:
+
+1. Go to Visual Studio Code  </br>
+  Open your Visual Studio Code then click on File and then click on Open folder.
+  Then navigate to where you have cloned the repository and open it.
+
+2.  </br>
+  
+
+3.  </br>
+  
+
+4.  </br>
+  
+
+5.  </br>
+  
+
+To start the backend do the following:
+
+1.   </br>
+  
+
+2.  </br>
+  
+
+3.  </br>
+  
+
+4.  </br>
+  
+
+5.  </br>
 
 
+<!-- FEATURES AND FUNCTIONALITY-->
+<!-- You can add the links to all of your imagery at the bottom of the file as references -->
+## Features and Functionality
 
+![Home](readme_images/)
 
+### Home Page
 
+???
 
-# Getting Started with Create React App
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+</br>
 
-## Available Scripts
+![Sticker](readme_images/)
 
-In the project directory, you can run:
+### Sticker Page
 
-### `npm start`
+??
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+</br>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+![Thank You](readme_images/)
 
-### `npm test`
+### Thank You Page
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+???
 
-### `npm run build`
+<!-- CONCEPT PROCESS -->
+<!-- Briefly explain your concept ideation process -->
+## Concept Process
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The `Conceptual Process` is the set of actions, activities and research that was done when starting this project.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Ideation
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<img src="readme_images/" alt="Visual Mind Map" width="1000px">
+</br>
+<img src="readme_images/" alt="Moodboard" width="1000px">
 
-### `npm run eject`
+### Planned Wireframes
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+<img src="readme_images/" alt="Wireframe 1" width="700px">
+</br>
+<img src="readme_images/" alt="Wireframe 2" width="700px">
+</br>
+<img src="readme_images/" alt="Wireframe 3" width="700px">
+</br>
+<img src="readme_images/" alt="Wireframe 4" width="700px">
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+<!-- DEVELOPMENT PROCESS -->
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Development Process
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+The `Development Process` is the technical implementations and functionality done in the frontend and backend of the application.
 
-## Learn More
+### Implementation Process
+<!-- stipulate all of the functionality you included in the project -->
+ 
+* `React` 
+* `Firebase` 
+* `Render` 
+* `Sendgrid` 
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+#### Highlights
+<!-- stipulated the highlight you experienced with the project -->
+* 
+* 
+* 
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+#### Challenges
+<!-- stipulated the challenges you faced with the project and why you think you faced it or how you think you'll solve it (if not solved) -->
+* 
+* 
+* 
 
-### Code Splitting
+### Reviews & Testing
+<!-- stipulate how you've conducted testing in the form of peer reviews, feedback and also functionality testing, like unit tests (if applicable) -->
+#### Unit Tests
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+`Unit Tests` were conducted to establish working functionality by myself.
 
-### Analyzing the Bundle Size
+* `Test 1` of 
+* `Test 2` of 
+* `Test 3` of 
+* `Test 4` of 
+* `Test 5` of 
+* `Test 6` of 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+#### UAT Tests
 
-### Making a Progressive Web App
+`User Acceptance Testing` were conducted to establish working functionality by my peers.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+* `Peer One` did a unit test
+* `Peer TWo` did a unit test
 
-### Advanced Configuration
+### Future Implementation
+<!-- stipulate functionality and improvements that can be implemented in the future. -->
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+* 
+* 
 
-### Deployment
+<!-- MOCKUPS -->
+## Final Outcome
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### Mockups
 
-### `npm run build` fails to minify
+![Mockup 1](readme_images/)
+<br>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+![Mockup 2](readme_images/)
+<br>
+
+![Mockup 3](readme_images/)
+<br>
+
+![Mockup 4](readme_images/)
+<br>
+
+![Mockup 5](readme_images/)
+<br>
+
+## Credits
+
+* Robin Barnard - Advert, Overview Video
+* Ayush Brathri - Character, 3D Design of Coffee Cafe
+* Mariné du Plessis - Interactive Website
+
+<!-- VIDEO DEMONSTRATION -->
+### Overview Video
+
+[View Demonstration]()
+
+### Advert
+
+[Promo Video]()
+
+### Promotional Video
+
+[Promo Video]()
+
+<!-- ROADMAP -->
+## Roadmap
+
+See Future Implementation for a list of proposed features (and known issues).
+
+<!-- CONTRIBUTING -->
+## Contributing
+
+Contributions are what makes the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+<!-- AUTHORS -->
+## Authors
+
+* **Mariné du Plessis** - [username](https://github.com/DupieM)
+
+<!-- LICENSE -->
+## License
+
+Motherland Coffee reserved © 2025
+
+<!-- LICENSE -->
+## Contact
+
+* **Mariné du Plessis** - [email@address](221326@virtualwindow.co.za) 
+* **Project Link** - https://github.com/DupieM/Motherland_Coffee
+
+<!-- ACKNOWLEDGEMENTS -->
+## Acknowledgements
+<!-- all resources that you used and Acknowledgements here -->
+* [Firebase Documentation](https://firebase.google.com/docs?hl=en&authuser=1&_gl=1*oj3ulf*_ga*MTQzMDEzOTU3OS4xNzEyNTU2NTU1*_ga_CW55HF8NVT*MTcxODU1NTAxMS44NS4xLjE3MTg1NTgxMDAuNTkuMC4w)
