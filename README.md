@@ -16,7 +16,7 @@
     <img src="readme_images/logo.png" alt="Logo" width="130" height="130">
   </a>
   
-  <h3 align="center">Motherland Coffee (Commercial)</h3>
+  <h3 align="center">Motherland Coffee (Commercial Campaign)</h3>
 
 <p align="center">
     Interactive platform where users share what coffee means to them. <br>
@@ -63,11 +63,11 @@
 <!--PROJECT DESCRIPTION-->
 ## About the Project
 <!-- header image of project -->
-<img src="readme_images/header_image.png" alt="header image" width="580px">
+<img src="readme_images/header_image.jpg" alt="header image" width="550px">
 
 ### Project Description
 
-??????
+Interactive campaign created in response to the Pendoring Award 2025 theme: “Taal never die, We Multiply.” Partnering with Motherland Coffee Company, it celebrates South Africa’s cultural and linguistic diversity by turning the act of sharing coffee into an expression of connection and heritage. Customers can access the platform via social media adverts or in-store, translate the site into their home language, and send personalised coffee vouchers with custom digital stickers and messages in their mother tongue. Recipients receive the message along with a voucher redeemable at any Motherland Coffee store.
 
 ### Built With
 
@@ -88,9 +88,9 @@ The following instructions will get you a copy of the project up and running on 
 
 For development, you require to create an account on [Firebase](https://firebase.google.com/).
 
-For sending emails you need to create an account on [Sendgrid]().
+For sending emails you need to create an account on [Sendgrid](https://sendgrid.com/en-us) for API Key.
 
-For making sure sendgrid does not stop create a n account on [Render]() to keep sendgrid running.
+For making sure sendgrid does not stop create a n account on [Render](https://render.com/) to keep sendgrid API Key running.
 
 ## How to install
 
