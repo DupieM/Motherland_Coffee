@@ -107,17 +107,17 @@ To start the Frontend React app do the following steps:
   Open your Visual Studio Code then click on File and then click on Open folder.
   Then navigate to where you have cloned the repository and open it.
 
-2.  </br>
-  
+2. Start Terminal </br>
+  Go to `Terminal` then click on new terminal.
 
-3.  </br>
-  
+3. Navigate to frontend folder </br>
+  Enter `cd frontend` to open the correct folder to start the app.
 
-4.  </br>
-  
+4. Install dependencies </br>
+  Enter `npm install` to get all the dependencies.
 
-5.  </br>
-  
+5. Start the React App </br>
+  Enter `npm start` to start.
 
 To start the backend do the following:
 
