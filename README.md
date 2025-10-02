@@ -90,7 +90,7 @@ For development, you require to create an account on [Firebase](https://firebase
 
 For sending emails you need to create an account on [Sendgrid](https://sendgrid.com/en-us) for API Key.
 
-For making sure sendgrid does not stop create a n account on [Render](https://render.com/) to keep sendgrid API Key running.
+For making sure sendgrid does not stop create an account on [Render](https://render.com/) to keep sendgrid API Key running.
 
 ## How to install
 
@@ -108,59 +108,68 @@ To start the Frontend React app do the following steps:
   Then navigate to where you have cloned the repository and open it.
 
 2. Start Terminal </br>
-  Go to `Terminal` then click on new terminal.
+  Go to `Terminal` then click on new terminal
 
 3. Navigate to frontend folder </br>
-  Enter `cd frontend` to open the correct folder to start the app.
+  Enter `cd frontend` to open the correct folder to start the app
 
 4. Install dependencies </br>
-  Enter `npm install` to get all the dependencies.
+  Enter `npm install` to get all the dependencies
 
 5. Start the React App </br>
-  Enter `npm start` to start.
+  Enter `npm start` to start
 
 To start the backend do the following:
 
-1.   </br>
-  
+1. Navigate to the backend folder </br>
+  Enter `cd backend` to open
 
-2.  </br>
-  
+2. Install dependencies </br>
+  Enter `npm install` to get all the dependencies
 
-3.  </br>
-  
+3. Update .env file in the backend folder with your API Keys </br>
+  `SENDGRID_API_KEY=SG.your_sendgrid_api_key`
+  `SENDER_EMAIL=your_verified_sender_email`
 
-4.  </br>
-  
+4. Start the backend locally </br>
+  Enter `npm start` to start
 
-5.  </br>
+5. Deployment on Render </br>
+  * Push your backend to GitHub.
+  * Go to Render, create a new Web Service, connect it to your GitHub repo.
+  * Add the same .env variables in Render’s Environment Variables tab.
+  * Render will give you a live backend URL (e.g., https://your-backend.onrender.com).
 
+Notes On Hosting
+* Backend on Render must stay active (Render’s free tier sleeps after inactivity)
+* SendGrid requires verified sender + free plan quota (100 emails/day).
+* If Render goes to sleep, first request may take ~30 seconds to respond.
 
 <!-- FEATURES AND FUNCTIONALITY-->
 <!-- You can add the links to all of your imagery at the bottom of the file as references -->
 ## Features and Functionality
 
-![Home](readme_images/)
+![Home](readme_images/home.png)
 
 ### Home Page
 
-???
+The home page welcomes coffee lovers and explains the project’s purpose. Users learn how they can share what coffee means to them, create a sticker, and receive a reward in return.
 
 </br>
 
-![Sticker](readme_images/)
+![Sticker](readme_images/sticker.png)
 
 ### Sticker Page
 
-??
+Here, users design their own digital sticker by entering their name and message, choosing a background, and selecting colours. Once ready, they can send the personalized sticker to a recipient via email.
 
 </br>
 
-![Thank You](readme_images/)
+![Thank You](readme_images/thank_you.png)
 
 ### Thank You Page
 
-???
+The thank you page confirms the user’s participation and expresses gratitude. It also provides a downloadable voucher as a reward for creating and sending a sticker.
 
 <!-- CONCEPT PROCESS -->
 <!-- Briefly explain your concept ideation process -->
@@ -170,19 +179,17 @@ The `Conceptual Process` is the set of actions, activities and research that was
 
 ### Ideation
 
-<img src="readme_images/" alt="Visual Mind Map" width="1000px">
+<img src="readme_images/moodboard_1.png" alt="Moodboard1" width="1000px">
 </br>
-<img src="readme_images/" alt="Moodboard" width="1000px">
+<img src="readme_images/moodboard_2.png" alt="Moodboard2" width="1000px">
 
 ### Planned Wireframes
 
-<img src="readme_images/" alt="Wireframe 1" width="700px">
+<img src="readme_images/wireframe_1.png" alt="Wireframe 1" width="700px">
 </br>
-<img src="readme_images/" alt="Wireframe 2" width="700px">
+<img src="readme_images/wireframe_2.png" alt="Wireframe 2" width="700px">
 </br>
-<img src="readme_images/" alt="Wireframe 3" width="700px">
-</br>
-<img src="readme_images/" alt="Wireframe 4" width="700px">
+<img src="readme_images/wireframe_3.png" alt="Wireframe 3" width="700px">
 
 <!-- DEVELOPMENT PROCESS -->
 
@@ -200,15 +207,14 @@ The `Development Process` is the technical implementations and functionality don
 
 #### Highlights
 <!-- stipulated the highlight you experienced with the project -->
-* 
-* 
-* 
+* Users can design personalized stickers with custom names, messages, and background patterns.
+* Making it a responsive design to view on web, iPad and mobile
+* Animated route transitions for a modern and engaging user experience
 
 #### Challenges
 <!-- stipulated the challenges you faced with the project and why you think you faced it or how you think you'll solve it (if not solved) -->
-* 
-* 
-* 
+* Adding a translation function to each page and then adding different languages to it
+* Making it possible to send a sticker created on the website to an email adress, embedded as a HTML tag
 
 ### Reviews & Testing
 <!-- stipulate how you've conducted testing in the form of peer reviews, feedback and also functionality testing, like unit tests (if applicable) -->
@@ -216,44 +222,43 @@ The `Development Process` is the technical implementations and functionality don
 
 `Unit Tests` were conducted to establish working functionality by myself.
 
-* `Test 1` of 
-* `Test 2` of 
-* `Test 3` of 
-* `Test 4` of 
-* `Test 5` of 
-* `Test 6` of 
+* `Test 1` of confirming that the transaltion on each page works
+* `Test 2` of confirming that the sticker component works
+* `Test 3` of confirming it sends the email once the form is complete
+* `Test 4` of confirming that transition screens works when moving between pages
+* `Test 5` of confirming that email sending of sticker works
+* `Test 6` of confirming that the vouchers are downloaded on thank you page in language chosen from translation
 
 #### UAT Tests
 
 `User Acceptance Testing` were conducted to establish working functionality by my peers.
 
-* `Peer One` did a unit test
-* `Peer TWo` did a unit test
+* `Peer One` did a unit test to test if all the functionality was working perfectly.
+* `Peer TWo` did a unit test to see if the emails are send out to correct email adress with sticker in email.
 
 ### Future Implementation
 <!-- stipulate functionality and improvements that can be implemented in the future. -->
 
-* 
-* 
+* Updating the background of stickers to be more creative
 
 <!-- MOCKUPS -->
 ## Final Outcome
 
 ### Mockups
 
-![Mockup 1](readme_images/)
+![Mockup 1](readme_images/Mockup_3.jpg)
 <br>
 
-![Mockup 2](readme_images/)
+![Mockup 2](readme_images/Mockup_4.jpg)
 <br>
 
-![Mockup 3](readme_images/)
+![Mockup 3](readme_images/Mockup_5.jpg)
 <br>
 
-![Mockup 4](readme_images/)
+![Mockup 4](readme_images/Mockup_2.jpg)
 <br>
 
-![Mockup 5](readme_images/)
+![Mockup 5](readme_images/Mockup_1.jpg)
 <br>
 
 ## Credits
@@ -265,15 +270,7 @@ The `Development Process` is the technical implementations and functionality don
 <!-- VIDEO DEMONSTRATION -->
 ### Overview Video
 
-[View Demonstration]()
-
-### Advert
-
-[Promo Video]()
-
-### Promotional Video
-
-[Promo Video]()
+[View Demonstration](https://drive.google.com/file/d/1j77uP1TivFWPlCGN751Fxok_rS09zScr/view?usp=sharing)
 
 <!-- ROADMAP -->
 ## Roadmap
